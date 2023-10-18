@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/estilos.css">
+    <title>Login</title>
+</head>
+<body>
+    <section class="form_section">
+        <div class="form_cuadro">
+            <form>
+                <h1>Iniciar sesión</h1>
+                <input type="text"     id="mail" placeholder="Mail">
+                <input type="password" id="pass" placeholder="Contraseña">
+                <button id="ingresar" >Ingresar</button>
+                <p id="error">Usuario y/o contraseña incorrecto/s</p>
+            </form>
+        </div>
+        <p>¿No estas registrado? <a href="./pages/registrarse.html">Registrte aquí</a></p>
+    </section>
+</body>
+    <script type="module" src="./src/app.js"></script>
+    <script src="./src/scripts/protectedLogin.js" ></script>
+    <script type="module" src="./src/scripts/login.js"></script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/estilos.css">
+    <title>Perfil</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Mi red social</h1>
+            <input class="head_buscador" type="text" placeholder="Buscar">
+            <ul>
+                <li><a href="./home.html">Inicio</a></li>
+                <li><a id="perfil">Perfil</a></li>
+                <li><a href="../index.html" id="cerrar">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="grid_container_perfil" >
+
+            <section class="grid_item banner_section">
+                <div>
+                    <img src="https://via.placeholder.com/1000x200" alt=""/>
+                    <h2 id="nombre">alguien</h2>
+                </div>
+                <div class="foto_perfil">
+                    <i class="bi bi-person-fill"></i>
+                </div>
+                <div class="perfil_nav">
+                    <ul>
+                        <li>Información</li>
+                        <li>Amigos</li>
+                        <li>Fotos</li>
+                        <li>Mas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="grid_item acerca_de_section" id="info"></section>
+
+            <section class="grid_item publicar_section estado_perfil" id="agregar_estados">
+                <div class="agregar_estado_container">
+                    <p><i class="bi bi-file-earmark-text"></i>Estado</p>
+                    <div>
+                        <textarea id="texto" cols="30" rows="5" placeholder="¿Que estás pensando?"></textarea>
+                    </div>
+                    <button id="publicar_boton">Publicar</button>
+                    <hr>
+                </div>
+            </section>
+
+            <section class="grid_item estado_section">
+                <div class="publicaciones_title">
+                    <h2>Publicaciones</h2>
+                    <hr>
+                </div>
+                <div class="estados_container" id="estados" ></div>
+            </section>
+        </div>
+    </main>
+</body>
+    <script src='../src/scripts/protectedRoute.js'></script>
+    <script type="module" src="../src/scripts/nav.js" ></script>
+    <script type="module" src="../src/scripts/perfil.js" ></script>
+</html>

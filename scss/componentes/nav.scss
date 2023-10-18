@@ -1,0 +1,31 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    nav {
+        background-color: #ec3832;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        
+        h1 {
+            color: white;
+        }
+        .head_buscador {
+            width: 30%;
+            padding-left: 10px;
+        }
+        ul {
+            display: flex;
+            li {
+                margin: 10px;
+                a {
+                    color: white;
+                    &:hover {
+                        color: #fca4a1;
+                    }
+                }
+            }
+        }
+    }
+}

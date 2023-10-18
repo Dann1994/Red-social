@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/estilos.css">
+    <title>Registrer</title>
+</head>
+<body>
+    <section class="form_section">
+        <div class="form_cuadro">
+            <form id="form">
+                <h1>Registrarse</h1>
+                <input type="text" placeholder="Nombre" id="nombre">
+                <input type="text" placeholder="Apellido" id="apellido">
+                <input type="mail" placeholder="mail" id="mail">
+                <input type="password" placeholder="Contraseña" id="pass">
+                <input type="password" placeholder="Repita la contraseña" id="pass2">
+                <button id="registrarse" >Registrar</button>
+                <p id="error">Las contraseñas no coinciden</p>
+            </form>
+        </div>
+        <p>¿Ya tienes una cuenta? <a href="../index.html">Inicia sesión aquí</a> </p>
+    </section>
+</body>
+    <script src="../src/app.js" ></script>
+    <script src="../src/scripts/protectedLogin.js" ></script>
+    <script type="module" src="../src/scripts/registrarse.js"></script>
+</html>

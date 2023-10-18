@@ -1,0 +1,40 @@
+.agregar_estado_container {
+    padding: 5px;
+    p {
+        margin: 5px;
+        width: 100%;
+        text-align: left;
+        i {
+            margin: 5px;
+        }
+    }
+    div {
+        textarea {
+            width: 96%;
+            margin: 5px;
+            align-self: center;
+            border-radius: 5px;
+            padding: 5px;
+            resize: none;
+        }
+    }
+    button {
+        height: 40px;
+        width: 100px;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #ec3832;
+        border: none;
+        color: aliceblue;
+        font-weight: 900;
+        cursor: pointer;
+        &:hover {
+            background-color: #ff534d;
+        }
+    }
+}
+
+.estado_perfil {
+    display: none;
+}

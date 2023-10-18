@@ -1,0 +1,42 @@
+.estado{
+    width: 95%;
+    padding: 5px;
+    margin: 10px 0px 10px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #c7c7c7;
+    background-color: #f0d7d7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 5px 30px 5px;
+    .titulo_publicacion {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 10px;
+        .foto_publicacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 50px;
+            background-color: #c7c7c7;
+            margin-right: 10px;
+            i {
+                font-size: 50px;
+                color: white;
+            }
+        }
+    }
+    .texto_publicacion{
+        margin: 10px 0px 10px;
+        padding: 5px 5px 15px;
+        color: #929090;
+        background-color: white;
+        border-radius: 5px;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+    }
+}

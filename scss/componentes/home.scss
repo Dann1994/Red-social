@@ -1,0 +1,104 @@
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+    "info public public public suge"
+    "info public public public suge"
+    "info public public public suge"
+    ;
+    gap: 5px;
+    margin: 10px;
+    .grid_item {
+        background-color: white;
+        margin: 10px;
+    }
+
+    .info_section {
+        grid-area: info;
+        height: 100vh;
+        .home_foto_container {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .home_foto {
+                height: 150px;
+                width: 150px;
+                background-color: #c7c7c7;
+                text-align: center;
+                i {
+                    color: white;
+                    font-size: 140px;
+                }
+            }
+        }
+        .info_continer {
+            padding: 15px;
+            ul {
+                li {
+                    margin-top: 5px;
+                    i {
+                        color: #c7c7c7;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .public_section {
+        grid-area: public;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        .nombre_container {
+            padding: 10px;
+            h2 {
+                margin-bottom: 5px;
+            }
+        }
+        .estados_container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            overflow-y: scroll;
+            height: auto;
+            flex: 1;
+        }
+    }
+
+    .sugerencia_section {
+        grid-area: suge;
+        .sugerencias_title {
+            padding: 5px;
+            background-color: #c7c7c7;
+        }
+        .sugerencias {
+            padding: 5px;
+            div {
+                padding: 5px;
+                display: flex;
+                margin: 5px;
+                .foto {
+                    height: 50px;
+                    width: 50px;
+                    background-color: #c7c7c7;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    i {
+                        font-size: 50px;
+                        color: white;
+                    }
+                }
+                div {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
