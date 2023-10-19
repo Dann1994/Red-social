@@ -19,69 +19,51 @@
         </nav>
     </header>
     <main>
-        <div class="grid_container" >
-            <section class="grid_item info_section">
-                <div class="home_foto_container">
-                    <div class="home_foto" id="foto_Perfil"></div>
-                </div>
-                <div class="info_continer">
-                    <ul>
-                        <li><i class="bi bi-chat-left-dots-fill"></i>Muro</li>
-                        <li><i class="bi bi-window-dock"></i>Información</li>
-                        <li><i class="bi bi-images"></i>Fotos</li>
-                        <li><i class="bi bi-people-fill"></i>Amigos</li>
-                    </ul>
-                </div>
-                <div>
-                    Mejores amigos
-                </div>
-            </section>
-
-            <section class="grid_item public_section">
-                <div class="nombre_container">
-                    <h2 id="nombre"></h2>
-                    <hr>
-                </div>
-                <div class="agregar_estado_container">
-                    <p><i class="bi bi-file-earmark-text"></i>Estado</p>
-                    <div>
-                        <textarea id="texto" cols="30" rows="5" placeholder="¿Que estás pensando?"></textarea>
+        <div class="page_continer">
+            <div class="grid_container" >
+                <section class="grid_item info_section">
+                    <div class="home_foto_container">
+                        <div class="home_foto" id="foto_Perfil"></div>
                     </div>
-                    <button id="publicar_boton">Publicar</button>
-                </div>
-                <hr>
-                <div class="estados_container" id="estados" >
-                    <!-- <div class="estado">
-                        <h3>Nombre</h3>
-                        <p>
-                            Esto es una publicacion
-                        </p>
+                    <div class="nombre_container">
                         <hr>
-                        <div>
-                            <p><i class="bi bi-hand-thumbs-up"><a href="">0</a></i></p>
-                            <p>28/10/1994 a las 20:22</p>
-                        </div>
-                    </div> -->
-                </div>
-            </section>
-
-            <section class="grid_item sugerencia_section">
-                <div class="sugerencias_title">
-                    personas que quizá conozcas
-                </div>
-                <div class="sugerencias" id="sugerencias">
-                    <!-- <div>
-                        <div class="foto">
-                            <i class="bi bi-person-fill"></i>
-                        </div>
-                        <div>
-                            <h4>Nombre y apellido</h4>
-                            <a href="">ver perfil</a>
-                        </div>
+                        <h2 id="nombre"></h2>
                     </div>
-                    <hr>
-                </div> -->
-            </section>
+                    <div class="info_continer">
+                        <ul>
+                            <li><i class="bi bi-chat-left-dots-fill"></i>Muro</li>
+                            <li><i class="bi bi-window-dock"></i>Información</li>
+                            <li><i class="bi bi-images"></i>Fotos</li>
+                            <li><i class="bi bi-people-fill"></i>Amigos</li>
+                        </ul>
+                    </div>
+                </section>
+    
+                <section class="grid_item estado_section">
+                    <div class="agregar_estado_container">
+                        <p><i class="bi bi-file-earmark-text"></i>Estado</p>
+                        <div>
+                            <textarea id="texto" cols="30" rows="5" placeholder="¿Que estás pensando?"></textarea>
+                        </div>
+                        <button id="publicar_boton">Publicar</button>
+                    </div>
+                </section>
+    
+                <section class="grid_item public_section">
+                    <div class="estados_container" id="estados" >
+                        <!-- aquí van los estados -->
+                    </div>
+                </section>
+    
+                <section class="grid_item sugerencia_section">
+                    <div class="sugerencias_title">
+                        <h3>Sugerencias</h3>
+                    </div>
+                    <div class="sugerencias" id="sugerencias">
+                        <!-- aquí van las sugerencias -->
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
     

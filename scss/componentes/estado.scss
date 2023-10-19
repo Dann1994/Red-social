@@ -4,8 +4,8 @@
     margin: 10px 0px 10px;
     padding: 15px;
     border-radius: 5px;
-    border: 1px solid #c7c7c7;
-    background-color: #f0d7d7;
+    border: 1px solid map-get($colores, gris_bordes );
+    background-color: map-get($colores, blanco );
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,20 +20,18 @@
             align-items: center;
             height: 50px;
             width: 50px;
-            background-color: #c7c7c7;
+            background-color: map-get($colores, gris_bordes );
             margin-right: 10px;
-            i {
-                font-size: 50px;
-                color: white;
-            }
+            border-radius: 50%;
         }
     }
     .texto_publicacion{
         margin: 10px 0px 10px;
         padding: 5px 5px 15px;
-        color: #929090;
-        background-color: white;
+        color: map-get($colores, gris_fuente );
+        background-color: map-get($colores, azul_text_A );;
         border-radius: 5px;
+        white-space: nowrap;
     }
     div {
         display: flex;

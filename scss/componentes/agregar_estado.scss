@@ -16,6 +16,10 @@
             border-radius: 5px;
             padding: 5px;
             resize: none;
+            background-color: map-get($colores, azul_text_A );
+            &:focus {
+                outline: 2px solid map-get($colores, azul_focus);
+            }
         }
     }
     button {
@@ -24,13 +28,13 @@
         margin: 5px;
         padding: 5px;
         border-radius: 10px;
-        background-color: #ec3832;
+        background-color: map-get($colores, azul );
         border: none;
         color: aliceblue;
         font-weight: 900;
         cursor: pointer;
         &:hover {
-            background-color: #ff534d;
+            background-color: map-get($colores, azul_hover );
         }
     }
 }

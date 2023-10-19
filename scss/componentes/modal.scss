@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000b3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,14 +12,61 @@
     .modal_content {
         height: 200px;
         width: 300px;
-        background-color: white;
+        border-radius: 15px;
+        background-color: map-get($colores, blanco );
         display: flex;
-        justify-content: center;
-        align-items: center; 
+        justify-content:space-around;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        padding: 15px;
+        h2 {
+            color: map-get($colores, azul);
+            margin-top: 20px;
+        }
+        i {
+            color: map-get($colores, gris_fuente );
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 30px;
+            cursor: pointer;
+        }
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 20px;
+            input {
+                height: 20px;
+                width: 90%;
+                margin: 10px;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid map-get($colores, gris_bordes );
+                color: map-get($colores, gris_fuente);
+                &::placeholder {
+                    color: map-get($colores, gris_place );
+                }
+                &:focus {
+                    outline: 2px solid map-get($colores, azul_focus);
+                }
+            }
+        }
+        button {
+            height: 40px;
+            width: 100px;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background-color: map-get($colores, azul);
+            border: none;
+            color: aliceblue;
+            font-weight: 900;
+            cursor: pointer;
+            &:hover {
+                background-color: map-get($colores, azul_hover);
+            }
         }
     }  
 }

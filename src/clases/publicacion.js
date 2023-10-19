@@ -1,5 +1,5 @@
 export default class Publicacion {
-    constructor(nombre, apellido, texto, mail, img) {
+    constructor(nombre, apellido, texto, mail, id) {
         this.nombre = nombre,
         this.apellido = apellido,
         this.likes = [],
@@ -7,7 +7,7 @@ export default class Publicacion {
         this.mail = mail,
         this.fecha = new Date().toLocaleDateString(),
         this.hora = new Date().toLocaleTimeString()
-        this.img = img
+        this.idUser = id
     }
 
     agregarLike = (user) => {

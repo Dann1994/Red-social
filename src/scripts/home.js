@@ -18,7 +18,10 @@ const mostrarSugerencia = (usuario) => {
     const { nombre, apellido, id } = usuario
     let objeto = document.createElement("div")
     objeto.innerHTML = (
-        `<div class="foto" id="${id}"></div>
+        `
+        <div class="foto_container">
+            <div class="foto" id="${id}"></div>
+        </div>
         <div>
             <h4>${nombre + ' ' + apellido}</h4>
             <a href="../pages/perfil.html?id=${id}">ver perfil</a>
@@ -48,9 +51,6 @@ renderizarPublicaciones()
 
 nombre.textContent = usuario.nombre + ' ' + usuario.apellido;
 
-
-// const daniel = document.getElementById('daniel');
-// daniel.addEventListener('click', () => window.location.href = './perfil.html?usuario=' + daniel.id)
 
 
 

@@ -1,4 +1,4 @@
-import edicionFoto from "./edicionFoto.js";
+import "./cambioFotoDePerfil.js";
 import funcionesGenerales from "./funcionesGenerales.js";
 import publicaciones from "./publicaciones.js";
 
@@ -7,15 +7,13 @@ const { usuario, getIdurl } = funcionesGenerales()
 
 const { renderizarPublicaciones } = publicaciones()
 
-const { cambiarFotoPerfil } = edicionFoto()
-
 const usuarios = JSON.parse(localStorage.getItem('usuarios'))
 const nombre = document.getElementById('nombre')
 const agregarEstado = document.getElementById('agregar_estados')
 const info = document.getElementById('info')
 const cambiarFoto = document.getElementById('cambiar_foto')
-const subirFoto = document.getElementById('subir_foto')
 const modal = document.getElementById('modal')
+const cerrarModal = document.getElementById('cerrar_modal')
 
 const id = getIdurl()
 let item = document.createElement('div');
@@ -27,8 +25,9 @@ const mostrarFotoDePerfil = () => {
 }
 
 const mostrarModal = () => {
-    modal.style.display = 'flex'
+    modal.style.display == 'flex'? (modal.style.display = 'none') : (modal.style.display = 'flex')
 }
+
 const user = usuarios.find( u => u.id == id)
 
 const { trabajo, estudio, vive } = usuario
@@ -80,8 +79,9 @@ if (id == usuario.id) {
     cambiarFoto.style.display = 'initial'
 }
 
-subirFoto.addEventListener('click', cambiarFotoPerfil)
+
 cambiarFoto.addEventListener('click', mostrarModal)
+cerrarModal.addEventListener('click', mostrarModal)
 
 
 renderizarPublicaciones()

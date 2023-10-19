@@ -8,8 +8,9 @@
     .form_cuadro {
         display: flex;
         flex-direction: column;
-        background-color: #ffffff;
+        background-color: map-get($colores, blanco );
         border-radius: 15px;
+        border: 1px solid map-get($colores, gris_bordes );
         form {
             width: 300px;
             display: flex;
@@ -19,7 +20,7 @@
             text-align: center;
             padding: 20px;
             h1 {
-                color: #ec3832;
+                color: map-get($colores, azul );
                 margin: 15px;
             }
             input {
@@ -28,13 +29,13 @@
                 margin: 10px;
                 padding: 10px;
                 border-radius: 10px;
-                border: 1px solid #918989;
-                color: #918989;
+                border: 1px solid map-get($colores, gris_bordes );
+                color: map-get($colores, gris_fuente);
                 &::placeholder {
-                    color: #b6a9a9;
+                    color: map-get($colores, gris_place );
                 }
                 &:focus {
-                    outline: 2px solid #fca4a1;
+                    outline: 2px solid map-get($colores, azul_focus);
                 }
             }
             button {
@@ -43,17 +44,17 @@
                 margin: 10px;
                 padding: 5px;
                 border-radius: 10px;
-                background-color: #ec3832;
+                background-color: map-get($colores, azul);
                 border: none;
                 color: aliceblue;
                 font-weight: 900;
                 cursor: pointer;
                 &:hover {
-                    background-color: #ff534d;
+                    background-color: map-get($colores, azul_hover);
                 }
             }
             p {
-                color: #ec3832;
+                color: map-get($colores, rojo_error);
                 display: none;
             }
         }
@@ -61,13 +62,13 @@
     p {
         text-decoration: none;
         margin: 10px;
-        color: #ec3832;
+        color: map-get($colores, azul);
         a{
             text-decoration: none;
             margin: 10px;
             color: #796d6d;
             &:hover{
-                color: #ec3832;
+                color:  map-get($colores, azul_focus);
                 font-weight: 900;
             }
         }

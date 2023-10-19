@@ -1,102 +1,136 @@
-.grid_container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas:
-    "info public public public suge"
-    "info public public public suge"
-    "info public public public suge"
-    ;
-    gap: 5px;
-    margin: 10px;
-    .grid_item {
-        background-color: white;
+.page_continer {
+    display: flex;
+    justify-content: center;
+    .grid_container {
+        width: 1350px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+        "info estado estado estado suge"
+        "info public public public suge"
+        ".    public public public suge"
+        ".    public public public .   "
+        ".    public public public .   "
+        ;
+        gap: 5px;
         margin: 10px;
-    }
-
-    .info_section {
-        grid-area: info;
-        height: 100vh;
-        .home_foto_container {
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .home_foto {
-                height: 210px;
-                width: 210px;
-                background-color: #c7c7c7;
-                text-align: center;
-                background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
-                background-size: cover;
-            }
+        .grid_item {
+            background-color: map-get($colores, blanco);
+            margin: 10px;
+            border: 1px solid map-get($colores, gris_bordes );
         }
-        .info_continer {
-            padding: 15px;
-            ul {
-                li {
-                    margin-top: 5px;
-                    i {
-                        color: #c7c7c7;
-                        margin-right: 5px;
-                    }
-                }
-            }
-        }
-    }
-
-    .public_section {
-        grid-area: public;
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        .nombre_container {
-            padding: 10px;
-            h2 {
-                margin-bottom: 5px;
-            }
-        }
-        .estados_container {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            padding: 10px;
-            overflow-y: scroll;
-            height: auto;
-            flex: 1;
-        }
-    }
-
-    .sugerencia_section {
-        grid-area: suge;
-        .sugerencias_title {
-            padding: 5px;
-            background-color: #c7c7c7;
-        }
-        .sugerencias {
-            padding: 5px;
-            div {
-                padding: 5px;
+    
+        .info_section {
+            grid-area: info;
+            height: 430px;
+            border-radius: 15px;
+            .home_foto_container {
+                padding: 10px;
                 display: flex;
-                margin: 5px;
-                .foto {
-                    height: 50px;
-                    width: 50px;
-                    background-color: #c7c7c7;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                justify-content: center;
+                align-items: center;
+                .home_foto {
+                    height: 200px;
+                    width: 200px;
+                    background-color: map-get($colores, gris_place);
+                    text-align: center;
                     background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
                     background-size: cover;
-                    i {
-                        font-size: 50px;
-                        color: white;
+                    border-radius: 50%;
+                }
+            }
+            .nombre_container {
+                padding: 10px;
+                text-align: center;
+                h2 {
+                    margin: 5px 0px 5px;
+                    font-size: auto;
+                    cursor: pointer;
+                    &:hover {
+                        color: map-get($colores , azul );
                     }
                 }
+            }
+
+            .info_continer {
+                padding: 15px;
+                ul {
+                    li {
+                        margin-top: 5px;
+                        i {
+                            color: map-get($colores, gris_icon);
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .estado_section {
+            grid-area: estado;
+            border-radius: 15px;
+            padding: 5px;
+        }
+    
+        .public_section {
+            grid-area: public;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            border-radius: 15px; 
+            overflow-y: scroll;
+            .estados_container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                overflow-y: scroll;
+                height: auto;
+                flex: 1;
+            }     
+        }
+    
+        .sugerencia_section {
+            grid-area: suge;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 500px;
+            .sugerencias_title {
+                padding: 5px;
+                background-color: map-get($colores, azul_text_A );
+                
+            }
+            .sugerencias {
+                padding: 5px;
                 div {
+                    padding: 5px;
                     display: flex;
-                    flex-direction: column;
+                    margin: 5px;
+                    .foto_container {
+                        .foto {
+                            height: 50px;
+                            width: 50px;
+                            background-color: map-get($colores, gris_place );
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
+                            background-size: cover;
+                            border-radius: 50%;
+                        }
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        h4 {
+                            font-size: 15px;
+                        }
+                        a {
+                            font-size: 12px;
+                        }
+                    }
                 }
             }
         }
