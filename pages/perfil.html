@@ -23,11 +23,13 @@
 
             <section class="grid_item banner_section">
                 <div>
-                    <img src="https://via.placeholder.com/1000x200" alt=""/>
+                    <div class="banner_container"></div>
                     <h2 id="nombre">alguien</h2>
                 </div>
-                <div class="foto_perfil">
-                    <i class="bi bi-person-fill"></i>
+                <div class="foto_perfil" id="foto_Perfil">
+                    <div class="cambioFoto" id="cambiar_foto">
+                        <a>Cambiar foto</a>
+                    </div>
                 </div>
                 <div class="perfil_nav">
                     <ul>
@@ -59,6 +61,15 @@
                 </div>
                 <div class="estados_container" id="estados" ></div>
             </section>
+        </div>
+
+        <div class="modal_fondo" id="modal">
+            <div class="modal_content">
+                <form>
+                    <input type="text" id="imgUrl" >
+                </form>
+                <button id="subir_foto">Cambiar foto</button>
+            </div>
         </div>
     </main>
 </body>

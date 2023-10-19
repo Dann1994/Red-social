@@ -23,14 +23,12 @@
             justify-content: center;
             align-items: center;
             .home_foto {
-                height: 150px;
-                width: 150px;
+                height: 210px;
+                width: 210px;
                 background-color: #c7c7c7;
                 text-align: center;
-                i {
-                    color: white;
-                    font-size: 140px;
-                }
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
+                background-size: cover;
             }
         }
         .info_continer {
@@ -89,6 +87,8 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
+                    background-size: cover;
                     i {
                         font-size: 50px;
                         color: white;

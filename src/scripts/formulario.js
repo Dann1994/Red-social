@@ -9,6 +9,7 @@ export default function formulario(obj) {
     const verCambios = ({ target }) => {
         const { id, value } = target 
         datos[id] = value
+        console.log(datos);
     }
 
     const formularioCompleto = () => {

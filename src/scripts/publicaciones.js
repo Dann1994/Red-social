@@ -15,15 +15,13 @@ export default function publicaciones() {
     let estados = document.getElementById('estados');
 
     const mostrarPublicacion = (publicacion) => {
-        const { nombre, apellido, texto, likes, fecha, hora } = publicacion
+        const { nombre, apellido, texto, likes, fecha, hora, img} = publicacion
         let objeto = document.createElement("div")
         objeto.className = "estado"
         objeto.innerHTML = (
             `
             <div class="titulo_publicacion">
-                <div class="foto_publicacion">
-                    <i class="bi bi-person-fill"></i>
-                </div>
+                <div class="foto_publicacion" style="background-image: url(${img}); background-size: cover;"></div>
                 <h3>${nombre + ' ' + apellido}</h3>
             </div>
             <p>Publicó</p>
@@ -63,7 +61,7 @@ export default function publicaciones() {
     const guardarPublicacion = () => {
         const { texto } = datos
         const publicaciones = JSON.parse(localStorage.getItem('publicaciones'));
-        const publicacion = new Publicacion(usuario.nombre, usuario.apellido, texto, usuario.mail)
+        const publicacion = new Publicacion(usuario.nombre, usuario.apellido, texto, usuario.mail, usuario.fotoPerfil)
         publicaciones.unshift(publicacion)
         localStorage.setItem('publicaciones', JSON.stringify(publicaciones))
         renderizarPublicaciones(JSON.parse(localStorage.getItem('publicaciones')))

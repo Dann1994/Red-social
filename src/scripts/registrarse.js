@@ -40,7 +40,7 @@ const cambiarMensajeDeError = () => {
     const { mail, pass, pass2 } = datos
     if (formularioCompleto()) {
         error.innerHTML = 'Complete todos los campos'
-    } else if ( mailRegistado(mail)) {
+    } else if ( mailRegistado(mail) ) {
         error.innerHTML = 'Ya existe una cuenta con el mail ingresado'
     } else if (pass !== pass2)  {
         error.innerHTML = 'Las contraseñas no coinciden'
