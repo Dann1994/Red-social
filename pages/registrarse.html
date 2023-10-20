@@ -16,6 +16,10 @@
                 <input type="mail" placeholder="mail" id="mail">
                 <input type="password" placeholder="Contraseña" id="pass">
                 <input type="password" placeholder="Repita la contraseña" id="pass2">
+                <select id="genero">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
                 <button id="registrarse" >Registrar</button>
                 <p id="error">Las contraseñas no coinciden</p>
             </form>
@@ -23,7 +27,6 @@
         <p>¿Ya tienes una cuenta? <a href="../index.html">Inicia sesión aquí</a> </p>
     </section>
 </body>
-    <script src="../src/app.js" ></script>
-    <script src="../src/scripts/protectedLogin.js" ></script>
+    <script type="module" src="../src/app.js" ></script>
     <script type="module" src="../src/scripts/registrarse.js"></script>
 </html>

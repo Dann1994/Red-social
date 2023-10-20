@@ -1,17 +1,17 @@
 import funcionesGenerales from "./funcionesGenerales.js";
-import publicaciones from "./publicaciones.js";
+import estados from "./estados.js";
 
-const { usuario } = funcionesGenerales()
-
-const { renderizarPublicaciones } = publicaciones()
+const { usuario } = funcionesGenerales() //Datos del usuario logueado.
+const { renderizarEstados } = estados() //Renderización de publicaciones
 
 const nombre = document.getElementById('nombre');
-
-let sugerencias = document.getElementById('sugerencias');
-
+const sugerencias = document.getElementById('sugerencias');
 const fotoPerfil = document.getElementById('foto_Perfil');
 
-fotoPerfil.style.backgroundImage = `url(${usuario.fotoPerfil})`
+
+const renderizarFotoDePerfil = () => {
+    fotoPerfil.style.backgroundImage = `url(${usuario.fotoPerfil})`
+}
 
 
 const mostrarSugerencia = (usuario) => {
@@ -30,7 +30,9 @@ const mostrarSugerencia = (usuario) => {
     sugerencias.appendChild(objeto)
 }
 
-const mostrarFotoDeSugerencias = (user) => {
+
+
+const renderizarDeSugerencias = (user) => {
     const foto = document.getElementById(user.id)
     foto.style.backgroundImage = `url(${user.fotoPerfil})`
 }
@@ -40,13 +42,14 @@ const renderizarSugerencias = () => {
     const filtrados = usuarios.filter( u => u.id !== usuario.id)
     filtrados.forEach( u => {
         mostrarSugerencia(u)
-        mostrarFotoDeSugerencias(u)
+        renderizarDeSugerencias(u)
     })
 }
 
 
 renderizarSugerencias()
-renderizarPublicaciones()
+renderizarEstados()
+renderizarFotoDePerfil()
 
 
 nombre.textContent = usuario.nombre + ' ' + usuario.apellido;

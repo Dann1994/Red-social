@@ -38,6 +38,13 @@
                     outline: 2px solid map-get($colores, azul_focus);
                 }
             }
+            select {
+                border-radius: 10px;
+                border: 1px solid map-get($colores, gris_bordes );
+                color: map-get($colores, gris_fuente);
+                padding: 10px;
+                margin: 10px;
+            }
             button {
                 height: 40px;
                 width: 100px;

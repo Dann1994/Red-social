@@ -1,11 +1,12 @@
 import "./cambioFotoDePerfil.js";
 import funcionesGenerales from "./funcionesGenerales.js";
-import publicaciones from "./publicaciones.js";
+import estados from "./estados.js";
+
 
 
 const { usuario, getIdurl } = funcionesGenerales()
 
-const { renderizarPublicaciones } = publicaciones()
+const { renderizarEstados } = estados()
 
 const usuarios = JSON.parse(localStorage.getItem('usuarios'))
 const nombre = document.getElementById('nombre')
@@ -17,6 +18,8 @@ const cerrarModal = document.getElementById('cerrar_modal')
 
 const id = getIdurl()
 let item = document.createElement('div');
+
+
 
 const mostrarFotoDePerfil = () => {
     const userPerfil = usuarios.find( u => u.id == getIdurl())
@@ -84,7 +87,7 @@ cambiarFoto.addEventListener('click', mostrarModal)
 cerrarModal.addEventListener('click', mostrarModal)
 
 
-renderizarPublicaciones()
+renderizarEstados()
 mostrarFotoDePerfil()
 
 // http://127.0.0.1:5500/pages/perfil.html?id=1697555746.906  ejemplo

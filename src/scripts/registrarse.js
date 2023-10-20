@@ -2,13 +2,15 @@ import Usuario from "../clases/usuarios.js"
 import formulario from "./formulario.js"
 
 const boton = document.getElementById('registrarse')
+const genero = document.getElementById('genero')
 
 const { verCambios, datos, formularioCompleto, mostrarError, ocultarError, error, inputs} = formulario({
     nombre: '',
     apellido: '',
     mail: '',
     pass: '',
-    pass2: ''
+    pass2: '',
+    genero: 'Masculino'
 })
 
 const mailRegistado = (mail) => {
@@ -19,8 +21,8 @@ const mailRegistado = (mail) => {
 
 const registrar = (e) => {
     e.preventDefault()
-    const { nombre, apellido, mail, pass, pass2 } = datos
-    const usuario = new Usuario( nombre, apellido, mail, pass )
+    const { nombre, apellido, mail, pass, pass2, genero } = datos
+    const usuario = new Usuario( nombre, apellido, mail, pass, genero )
     const usuarios = JSON.parse(localStorage.getItem('usuarios'))
 
 
@@ -52,5 +54,7 @@ inputs.forEach(i => {
     i.addEventListener('input', verCambios);
     i.addEventListener('click', ocultarError);
 });
+
+genero.addEventListener('input', verCambios)
 
 boton.addEventListener( 'click', registrar)

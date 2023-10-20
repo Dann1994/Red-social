@@ -6,13 +6,24 @@ header {
         background-color: map-get($colores, blanco);
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 5px;
         border-bottom: 1px solid map-get($colores, gris_bordes );
-        h1 {
-            color: map-get($colores, azul );
+        .logo_container {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            h1 {
+                color: map-get($colores, azul );
+            }
         }
         .head_buscador {
             width: 30%;
+            height: 30px;
             padding-left: 10px;
         }
         ul {
@@ -21,6 +32,7 @@ header {
                 margin: 10px;
                 a {
                     color: map-get($colores, gris_fuente);
+                    cursor: pointer;
                     &:hover {
                         color: map-get($colores, azul_focus );
                     }

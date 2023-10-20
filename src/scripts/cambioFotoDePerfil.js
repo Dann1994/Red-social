@@ -11,14 +11,23 @@ export default function cambioFotoDePerfil() {
     const { verCambios, datos } = formulario({imgUrl:''})
 
     //Funciones del script "funciones generales".
-    const { usuarios, usuario } = funcionesGenerales()
+    const { usuarios, usuario, cambiarImagenFondo } = funcionesGenerales()
 
     //Input donde ingresamos la url de la nueva imagen que queremos de perfil.
     const inputUrl = document.getElementById('imgUrl')
 
     //Botón para cambiar foto de perfil.
     const subirFoto = document.getElementById('subir_foto')
+
+    //Vista previea de la nueva foto de perfil
+    const fotoPreview = document.getElementById('foto_preview');
     
+
+    //Uestra la previsualización de la foto que vamos a poner de perfil.
+    const cambiarFotoPreview = () => {
+        const { imgUrl } = datos
+        cambiarImagenFondo(fotoPreview, imgUrl)
+    }
 
     /*
         Recorre la lista de usuarios del localStorage y
@@ -45,6 +54,10 @@ export default function cambioFotoDePerfil() {
         fromulario y así poder acceder a la url.
     */
     inputUrl.addEventListener('input', verCambios)
+
+    inputUrl.addEventListener('input', cambiarFotoPreview)
+
+    
 
     /*
         Añade el evento "cambioFotoPerfil"

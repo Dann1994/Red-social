@@ -31,6 +31,13 @@ export default function funcionesGenerales() {
 
         return id
     }
+
+    /*
+        Aplica una imagen de fondo de una url dada a una etiqueta pasada por parámetro.
+    */
+    const cambiarImagenFondo = (etiqueta, url) => {
+        etiqueta.style.backgroundImage = `url(${url})`
+    }
     
     return {
         cerrarSesion,
@@ -38,6 +45,7 @@ export default function funcionesGenerales() {
         usuarios,
         navegar,
         getIdurl,
-        obtenerFotoDePerfil
+        obtenerFotoDePerfil,
+        cambiarImagenFondo
     }
 }

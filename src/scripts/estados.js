@@ -2,7 +2,7 @@ import Publicacion from "../clases/publicacion.js";
 import formulario from "./formulario.js";
 import funcionesGenerales from "./funcionesGenerales.js";
 
-export default function publicaciones() {
+export default function estados() {
 
     const { verCambios, datos } = formulario({ nombre:'', texto:'', likes:0})
 
@@ -12,9 +12,9 @@ export default function publicaciones() {
 
     const { usuarios, usuario, getIdurl, obtenerFotoDePerfil } = funcionesGenerales()
 
-    let estados = document.getElementById('estados');
+    let estadosSection = document.getElementById('estados');
 
-    const mostrarPublicacion = (publicacion) => {
+    const mostrarEstado = (publicacion) => {
         const { nombre, apellido, texto, likes, fecha, hora, idUser } = publicacion
         const foto = obtenerFotoDePerfil(idUser)
         let objeto = document.createElement("div")
@@ -35,44 +35,36 @@ export default function publicaciones() {
                 <p>${fecha} a las ${hora}</p>
             </div>`
         )
-        estados.appendChild(objeto)
+        estadosSection.appendChild(objeto)
     }
 
-
-    const quitarLasPublicaciones = () => {
-        while (estados.firstChild) {
-            estados.removeChild(estados.firstChild);
-        }
-    }
-
-
-    const renderizarPublicaciones = () => {
-        quitarLasPublicaciones()
-        let publicaciones = JSON.parse(localStorage.getItem('publicaciones'));
+    const renderizarEstados = () => {
+        estadosSection.innerHTML = "";
+        let estados = JSON.parse(localStorage.getItem('estados'));
         if (getIdurl()) {
             const id = getIdurl();
             const usuario = usuarios.find(u => u.id == id)
-            publicaciones = publicaciones?.filter( p => p.mail == usuario.mail)
+            estados = estados?.filter( p => p.mail == usuario.mail)
         }
-        publicaciones?.forEach( p => {
-            mostrarPublicacion(p)
+        estados?.forEach( p => {
+            mostrarEstado(p)
         })
     }
 
-    const guardarPublicacion = () => {
+    const guardarEstado = () => {
         const { texto } = datos
         const { nombre, apellido, mail, id } = usuario
-        const publicaciones = JSON.parse(localStorage.getItem('publicaciones'));
+        const estados = JSON.parse(localStorage.getItem('estados'));
         const publicacion = new Publicacion(nombre, apellido, texto, mail, id)
-        publicaciones.unshift(publicacion)
-        localStorage.setItem('publicaciones', JSON.stringify(publicaciones))
-        renderizarPublicaciones(JSON.parse(localStorage.getItem('publicaciones')))
+        estados.unshift(publicacion)
+        localStorage.setItem('estados', JSON.stringify(estados))
+        renderizarEstados(JSON.parse(localStorage.getItem('estados')))
         alert('¡Estado publicado!')
     }
     
     const publicar = () => {
         if (datos.texto.trim() !== '') {
-            guardarPublicacion()
+            guardarEstado()
             estado.value = '';
         }
     }
@@ -82,6 +74,6 @@ export default function publicaciones() {
     estado.addEventListener('input', verCambios)
 
     return {
-        renderizarPublicaciones
+        renderizarEstados
     }
 }

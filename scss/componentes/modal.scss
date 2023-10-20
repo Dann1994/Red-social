@@ -8,9 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;   
+    display: none;
+    z-index: 2;
     .modal_content {
-        height: 200px;
+        height: 500px;
         width: 300px;
         border-radius: 15px;
         background-color: map-get($colores, blanco );
@@ -20,6 +21,15 @@
         flex-direction: column;
         position: relative;
         padding: 15px;
+        .foto_preview {
+            height: 200px;
+            width: 200px;
+            background-color: map-get($colores , gris_place );
+            border-radius: 50%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
+            background-size: cover;
+            border: 5px solid map-get($colores , gris_place );
+        }
         h2 {
             color: map-get($colores, azul);
             margin-top: 20px;
