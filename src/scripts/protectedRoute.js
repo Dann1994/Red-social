@@ -31,7 +31,7 @@ export default function protectedRoute() {
             no redirecciona a la página de inicio.
         */
         if (esLaPaginaActual("registrarse.html") || esLaPaginaActual("index.html")) {
-            user && (window.location.href = '/pages/home.html')
+            user?.id && (window.location.href = '/pages/home.html');
         }
 
         /*
@@ -39,7 +39,7 @@ export default function protectedRoute() {
             tenga su parámetro id, nos redirecciona a "home.html"
         */
         if (esLaPaginaActual("perfil.html")) {
-            !getIdurl() && (window.location.href = '/pages/home.html')
+            !getIdurl() && (window.location.href = '/pages/home.html');
         }
     }
     
