@@ -30,7 +30,7 @@ export default function protectedRoute() {
             SI intentamos acceder al index o al regoistro estando logueado un usuario
             no redirecciona a la página de inicio.
         */
-        if (esLaPaginaActual("registrarse.html") || esLaPaginaActual("index.html")) {
+        if ( esLaPaginaActual("index.html")) {
             user?.id && (window.location.href = '/pages/home.html');
         }
 
