@@ -1,31 +1,37 @@
 import formulario from "./formulario.js"
+import { botonIngresar, inputsCampos } from "../DOM/DOM.js"
+import funcionesGenerales from "./funcionesGenerales.js"
 
-const boton = document.getElementById('ingresar')
-
-const { verCambios, datos, mostrarError, ocultarError, inputs } = formulario({
+//Crea formulario para el inicio de sesión y trae sus funciones.
+const { verCambios, datos, mostrarError, ocultarError } = formulario({
     mail: '',
     pass: ''
 })
 
+const { usuariosRegistrados, setUsuarioLogueado, navegar } = funcionesGenerales()
+
+//Inicia sesión con los datos de usuario y contraseña.
 const iniciarSesion = (e) => {
     e.preventDefault()
-    const usuarios = JSON.parse(localStorage.getItem('usuarios'))
-    console.log(usuarios);
-    const usuario = usuarios.find( u => u.mail == datos.mail && u.pass == datos.pass) 
+    const usuarios = usuariosRegistrados();
+    const usuario = usuarios.find( u => u.mail == datos.mail && u.pass == datos.pass);
 
     if ( usuario ) {
-        console.log('Existe');
-        sessionStorage.setItem('sesion', JSON.stringify(usuario))
-        window.location.href = './pages/home.html';
+        setUsuarioLogueado(usuario);
+        navegar('./pages/home.html');
     } else {
-        console.log('Usuario y/o contraseña incorrectos');
         mostrarError()
     }
 }
 
-inputs.forEach(i => {
-    i.addEventListener('input', verCambios);
-    i.addEventListener('click', ocultarError);
+
+
+//Agrega eventos a los inputs del login
+inputsCampos.forEach(i => {
+    i.addEventListener('input', verCambios); //Guarda el valor de los inputs.
+    i.addEventListener('click', ocultarError); //Al hacer click en algún input oculta el mensaje de error si este es visible.
 });
 
-boton.addEventListener( 'click', iniciarSesion)
+
+//Agraga el evento click al boton de ingresar, le permite iniciar sesión.
+botonIngresar.addEventListener( 'click', iniciarSesion)

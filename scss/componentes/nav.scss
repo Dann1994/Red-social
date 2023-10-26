@@ -2,6 +2,9 @@ header {
     position: sticky;
     top: 0;
     z-index: 2;
+    box-shadow: -3px 9px 9px -6px #00000066;
+                -webkit-box-shadow: -3px 9px 9px -6px #00000066;
+                -moz-box-shadow: -3px 9px 9px -6px #00000066;
     nav {
         background-color: map-get($colores, blanco);
         display: flex;
@@ -30,9 +33,44 @@ header {
             display: flex;
             li {
                 margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .amistad_notification {
+                    position: relative;
+                    div {
+                        position: absolute;
+                        height: 20px;
+                        width: 20px;
+                        top: 0;
+                        right: 0;
+                        align-items: center;
+                        p {
+                            display: flex;
+                            border-radius: 50%;
+                            border: 2px solid map-get($colores, blanco);
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 10px;
+                            color: map-get($colores, blanco);
+                            background-color: map-get($colores, rojo_error);
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                    i {
+                        color: map-get($colores, gris_fuente);
+                        cursor: pointer;
+                        font-size: 35px;
+                        &:hover {
+                            color: map-get($colores, azul_focus );
+                        }
+                    }
+                }
                 a {
                     color: map-get($colores, gris_fuente);
                     cursor: pointer;
+                    font-weight: 700;
                     &:hover {
                         color: map-get($colores, azul_focus );
                     }

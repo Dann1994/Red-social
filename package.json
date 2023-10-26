@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.1",
-    "ngx-owl-carousel-2": "^6.0.10"
+    "ngx-owl-carousel-2": "^6.0.10",
+    "sweetalert2": "^11.7.32"
   }
 }

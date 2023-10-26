@@ -14,7 +14,9 @@ class Usuario {
         this.celular = ''
         this.fechaDeRegistro = new Date().toLocaleDateString()
         this.fotoPerfil = 'https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png'
-        this.fotoBanner = 'https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg'
+        this.fotoBanner = 'https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg',
+        this.seguidores = []
+        this.seguidos = []
     }
 
     cambiarNombre = (nuevo) => {

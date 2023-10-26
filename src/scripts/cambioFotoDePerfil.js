@@ -11,7 +11,7 @@ export default function cambioFotoDePerfil() {
     const { verCambios, datos } = formulario({imgUrl:''})
 
     //Funciones del script "funciones generales".
-    const { usuarios, usuario, cambiarImagenFondo } = funcionesGenerales()
+    const { usuarioLoguedo, usuariosRegistrados, cambiarImagenFondo } = funcionesGenerales()
 
     //Input donde ingresamos la url de la nueva imagen que queremos de perfil.
     const inputUrl = document.getElementById('imgUrl')
@@ -36,15 +36,29 @@ export default function cambioFotoDePerfil() {
         reinicia la página.
     */
     const cambiarFotoPerfil = () => {
-        usuarios.forEach( u => {
-            if ( u.id == usuario.id ) {
-                u.fotoPerfil = datos.imgUrl;
-                sessionStorage.setItem('sesion', JSON.stringify(u))
-            }
-        });
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-        alert('¡Foto cambiada!')
-        window.location.reload();
+        const usuarios = usuariosRegistrados()
+        Swal.fire({
+            title: '¿Deseas guardar los cambios?',
+            text: "Vas a cambiar tu foto de perfil",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    usuarios.forEach( u => {
+                        if ( u.id == usuarioLoguedo().id ) {
+                            u.fotoPerfil = datos.imgUrl;
+                            sessionStorage.setItem('sesion', JSON.stringify(u))
+                        }
+                    });
+                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                    window.location.reload();
+                }
+            })
+        
     }
 
     /*

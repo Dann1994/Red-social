@@ -19,6 +19,9 @@
             background-color: map-get($colores, blanco);
             margin: 10px;
             border: 1px solid map-get($colores, gris_bordes );
+            box-shadow: 0px 0px 2px 2px #756c6c5c;
+            -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
+            -moz-box-shadow: 0px 0px 2px 2px #756c6c5c;
         }
     
         .info_section {
@@ -37,18 +40,21 @@
                     text-align: center;
                     background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
                     background-size: cover;
+                    background-position: center;
                     border-radius: 50%;
                 }
             }
             .nombre_container {
                 padding: 10px;
                 text-align: center;
-                h2 {
-                    margin: 5px 0px 5px;
-                    font-size: auto;
-                    cursor: pointer;
-                    &:hover {
-                        color: map-get($colores , azul );
+                a {
+                    h2 {
+                        margin: 5px 0px 5px;
+                        font-size: auto;
+                        cursor: pointer;
+                        &:hover {
+                            color: map-get($colores , azul );
+                        }
                     }
                 }
             }
@@ -78,9 +84,11 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             height: 100vh;
             border-radius: 15px; 
-            overflow-y: scroll;
+            overflow-y: auto;
+
             .estados_container {
                 display: flex;
                 align-items: center;
@@ -104,11 +112,17 @@
             }
             .sugerencias {
                 padding: 5px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
                 div {
                     padding: 5px;
                     display: flex;
-                    margin: 5px;
                     .foto_container {
+                        width: 30%;
+                        display: flex;
+                        justify-content: center;
                         .foto {
                             height: 50px;
                             width: 50px;
@@ -118,6 +132,7 @@
                             align-items: center;
                             background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
                             background-size: cover;
+                            background-position: center;
                             border-radius: 50%;
                         }
                     }
@@ -126,9 +141,12 @@
                         flex-direction: column;
                         h4 {
                             font-size: 15px;
+                            color: map-get($colores, gris_nombre);
                         }
                         a {
-                            font-size: 12px;
+                            color: map-get($colores, azul );
+                            cursor: pointer;
+                            font-weight: 900px;
                         }
                     }
                 }

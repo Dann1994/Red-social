@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../src/assets/favicon-32x32.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style/estilos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Perfil</title>
 </head>
 <body>
@@ -18,6 +19,14 @@
             </a>
             <input class="head_buscador" type="text" placeholder="Buscar">
             <ul>
+                <li>
+                    <div class="amistad_notification">
+                        <div>
+                            <p id="solicitudes"></p>
+                        </div>
+                        <i class="bi bi-person-fill-add"></i>
+                    </div>
+                </li>
                 <li><a href="./home.html">Inicio</a></li>
                 <li><a id="perfil" >Perfil</a></li>
                 <li><a href="../index.html" id="cerrar">Cerrar sesión</a></li>
@@ -37,12 +46,18 @@
                             <a>Cambiar foto</a>
                         </div>
                     </div>
+                    
                     <div class="perfil_nav">
                         <ul>
                             <li>Información</li>
                             <li>Amigos</li>
                             <li>Fotos</li>
                             <li>Más</li>
+                            <li>
+                                <div id="seguir" class="seguir" >
+                                    <button id="seguir_boton"></button>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -83,6 +98,8 @@
         </div>
     </main>
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src='../src/app.js'></script>
     <script type="module" src="../src/scripts/nav.js" ></script>
     <script type="module" src="../src/scripts/perfil.js" ></script>

@@ -86,7 +86,10 @@ a {
 header {
   position: sticky;
   top: 0;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: -3px 9px 9px -6px #00000066;
+  -webkit-box-shadow: -3px 9px 9px -6px #00000066;
+  -moz-box-shadow: -3px 9px 9px -6px #00000066; }
   header nav {
     background-color: #FFFFFF;
     display: flex;
@@ -110,15 +113,45 @@ header {
     header nav ul {
       display: flex; }
       header nav ul li {
-        margin: 10px; }
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        header nav ul li .amistad_notification {
+          position: relative; }
+          header nav ul li .amistad_notification div {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            top: 0;
+            right: 0;
+            align-items: center; }
+            header nav ul li .amistad_notification div p {
+              display: flex;
+              border-radius: 50%;
+              border: 2px solid #FFFFFF;
+              justify-content: center;
+              align-items: center;
+              font-size: 10px;
+              color: #FFFFFF;
+              background-color: #ec3832;
+              height: 20px;
+              width: 20px; }
+          header nav ul li .amistad_notification i {
+            color: #767676;
+            cursor: pointer;
+            font-size: 35px; }
+            header nav ul li .amistad_notification i:hover {
+              color: #79b4f0; }
         header nav ul li a {
           color: #767676;
-          cursor: pointer; }
+          cursor: pointer;
+          font-weight: 700; }
           header nav ul li a:hover {
             color: #79b4f0; }
 
 .estado {
-  width: 95%;
+  width: 90%;
   padding: 5px;
   margin: 10px 0px 10px;
   padding: 15px;
@@ -133,6 +166,8 @@ header {
     display: flex;
     justify-content: start;
     margin-bottom: 10px; }
+    .estado .titulo_publicacion a h3 {
+      color: #423e3e; }
     .estado .titulo_publicacion .foto_publicacion {
       display: flex;
       justify-content: center;
@@ -218,6 +253,7 @@ header {
       border-radius: 50%;
       background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
       background-size: cover;
+      background-position: center;
       border: 5px solid #c9c8c3; }
     .modal_fondo .modal_content h2 {
       color: #0A66C2;
@@ -274,7 +310,10 @@ header {
     .page_continer .grid_container .grid_item {
       background-color: #FFFFFF;
       margin: 10px;
-      border: 1px solid #DFDEDA; }
+      border: 1px solid #DFDEDA;
+      box-shadow: 0px 0px 2px 2px #756c6c5c;
+      -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
+      -moz-box-shadow: 0px 0px 2px 2px #756c6c5c; }
     .page_continer .grid_container .info_section {
       grid-area: info;
       height: 430px;
@@ -291,15 +330,16 @@ header {
           text-align: center;
           background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
           background-size: cover;
+          background-position: center;
           border-radius: 50%; }
       .page_continer .grid_container .info_section .nombre_container {
         padding: 10px;
         text-align: center; }
-        .page_continer .grid_container .info_section .nombre_container h2 {
+        .page_continer .grid_container .info_section .nombre_container a h2 {
           margin: 5px 0px 5px;
           font-size: auto;
           cursor: pointer; }
-          .page_continer .grid_container .info_section .nombre_container h2:hover {
+          .page_continer .grid_container .info_section .nombre_container a h2:hover {
             color: #0A66C2; }
       .page_continer .grid_container .info_section .info_continer {
         padding: 15px; }
@@ -317,9 +357,10 @@ header {
       padding: 20px;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       height: 100vh;
       border-radius: 15px;
-      overflow-y: scroll; }
+      overflow-y: auto; }
       .page_continer .grid_container .public_section .estados_container {
         display: flex;
         align-items: center;
@@ -336,28 +377,39 @@ header {
         padding: 5px;
         background-color: #EDF3F8; }
       .page_continer .grid_container .sugerencia_section .sugerencias {
-        padding: 5px; }
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%; }
         .page_continer .grid_container .sugerencia_section .sugerencias div {
           padding: 5px;
-          display: flex;
-          margin: 5px; }
-          .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container .foto {
-            height: 50px;
-            width: 50px;
-            background-color: #c9c8c3;
+          display: flex; }
+          .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container {
+            width: 30%;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
-            background-size: cover;
-            border-radius: 50%; }
+            justify-content: center; }
+            .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container .foto {
+              height: 50px;
+              width: 50px;
+              background-color: #c9c8c3;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
+              background-size: cover;
+              background-position: center;
+              border-radius: 50%; }
           .page_continer .grid_container .sugerencia_section .sugerencias div div {
             display: flex;
             flex-direction: column; }
             .page_continer .grid_container .sugerencia_section .sugerencias div div h4 {
-              font-size: 15px; }
+              font-size: 15px;
+              color: #423e3e; }
             .page_continer .grid_container .sugerencia_section .sugerencias div div a {
-              font-size: 12px; }
+              color: #0A66C2;
+              cursor: pointer;
+              font-weight: 900px; }
 
 .page_continer {
   display: flex;
@@ -373,7 +425,10 @@ header {
     .page_continer .grid_container_perfil .grid_item {
       background-color: #FFFFFF;
       border-radius: 15px;
-      border: 1px solid #DFDEDA; }
+      border: 1px solid #DFDEDA;
+      box-shadow: 0px 0px 2px 2px #756c6c5c;
+      -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
+      -moz-box-shadow: 0px 0px 2px 2px #756c6c5c; }
     .page_continer .grid_container_perfil .banner_section {
       grid-area: banner;
       border-radius: 0;
@@ -388,7 +443,8 @@ header {
         .page_continer .grid_container_perfil .banner_section div .banner_container {
           height: 450px;
           background-image: linear-gradient(#00000000, #00000080), url("https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg");
-          background-size: cover; }
+          background-size: cover;
+          background-position: center; }
         .page_continer .grid_container_perfil .banner_section div img {
           width: 100%; }
         .page_continer .grid_container_perfil .banner_section div h2 {
@@ -411,6 +467,7 @@ header {
         border: 5px solid #FFFFFF;
         background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
         background-size: cover;
+        background-position: center;
         overflow: hidden; }
         .page_continer .grid_container_perfil .banner_section .foto_perfil .cambioFoto {
           display: none;
@@ -434,6 +491,21 @@ header {
             background-color: #00000054; }
             .page_continer .grid_container_perfil .banner_section .foto_perfil .cambioFoto:hover a {
               color: #FFFFFF; }
+      .page_continer .grid_container_perfil .banner_section .seguir {
+        right: 10px;
+        bottom: 5px; }
+        .page_continer .grid_container_perfil .banner_section .seguir button {
+          padding: 5px 10px 10px 10px;
+          border-radius: 10px;
+          background-color: #0A66C2;
+          border: none;
+          color: aliceblue;
+          font-weight: 900;
+          cursor: pointer; }
+          .page_continer .grid_container_perfil .banner_section .seguir button:hover {
+            background-color: #0a4580; }
+          .page_continer .grid_container_perfil .banner_section .seguir button i {
+            font-size: 20px; }
       .page_continer .grid_container_perfil .banner_section .perfil_nav {
         display: flex;
         justify-content: center;
@@ -472,6 +544,7 @@ header {
       grid-area: estado;
       display: flex;
       flex-direction: column;
+      align-items: center;
       position: relative; }
       .page_continer .grid_container_perfil .estado_section .publicaciones_title {
         width: 100%;
@@ -483,7 +556,11 @@ header {
           margin: 5px;
           padding: 5px; }
       .page_continer .grid_container_perfil .estado_section .estados_container {
-        overflow-y: scroll;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
         margin-top: 50px;
         padding: 20px; }
     .page_continer .grid_container_perfil .publicar_section {

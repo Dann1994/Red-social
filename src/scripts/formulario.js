@@ -1,18 +1,12 @@
+import { errorMensaje, inputsCampos } from "../DOM/DOM.js";
 /*
     Crea un formulario con las propiedades pasadas por parámetro
 */
-
 
 export default function formulario(obj) {
 
     //Objeto con los datos del formulario.
     const datos = obj
-
-    //Etiqueta p que muestra el mensaje de error.
-    const error = document.getElementById('error')
-
-    //Contiene todos li inputs del formulario.
-    const inputs = document.querySelectorAll('input')
 
     //guarda los valores de los inputs
     const verCambios = ({ target }) => {
@@ -31,8 +25,8 @@ export default function formulario(obj) {
 
     //Muestra el error que falta llenar campos y marca los campos que faltan.
     const mostrarError = () => {
-        const inputs = document.querySelectorAll('input')
-        error.style.display = "initial";
+        const inputs = inputsCampos;
+        errorMensaje.style.display = "initial";
         inputs.forEach( i => {
             i.value.trim() == '' && (i.style.border = '2px solid red')
         })
@@ -40,8 +34,8 @@ export default function formulario(obj) {
     
     //Oculta el mensaje de error
     const ocultarError = () => {
-        const inputs = document.querySelectorAll('input')
-        error.style.display = "none";
+        const inputs = inputsCampos;
+        errorMensaje.style.display = "none";
         inputs.forEach( i => {
             i.style.border = '1px solid #cabdbd'
         })
@@ -52,8 +46,6 @@ export default function formulario(obj) {
         datos,
         formularioCompleto,
         mostrarError,
-        ocultarError,
-        error,
-        inputs
+        ocultarError
     }
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/estilos.css">
     <link rel="icon" href="../src/assets/favicon-32x32.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Inicio</title>
 </head>
 <body>
@@ -18,6 +19,14 @@
             </a>
             <input class="head_buscador" type="text" placeholder="Buscar">
             <ul>
+                <li>
+                    <div class="amistad_notification">
+                        <div>
+                            <p id="solicitudes"></p>
+                        </div>
+                        <i class="bi bi-person-fill-add"></i>
+                    </div>
+                </li>
                 <li><a >Inicio</a></li>
                 <li><a id="perfil" >Perfil</a></li>
                 <li><a href="../index.html" id="cerrar">Cerrar sesión</a></li>
@@ -40,7 +49,7 @@
                             <li><i class="bi bi-chat-left-dots-fill"></i>Muro</li>
                             <li><i class="bi bi-window-dock"></i>Información</li>
                             <li><i class="bi bi-images"></i>Fotos</li>
-                            <li><i class="bi bi-people-fill"></i>Amigos</li>
+                            <li><i class="bi bi-people-fill"></i>Seguidores y seguidos</li>
                         </ul>
                     </div>
                 </section>
@@ -74,6 +83,7 @@
     </main>
     
 </body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src='../src/app.js'></script>
     <script type="module" src="../src/scripts/nav.js" ></script>
     <script type="module" src="../src/scripts/home.js" ></script>

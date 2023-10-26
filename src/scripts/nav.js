@@ -1,14 +1,14 @@
 import funcionesGenerales from "./funcionesGenerales.js";
 
-const cerrar = document.getElementById('cerrar');
-const perfil = document.getElementById('perfil');
+const { cerrarSesion, usuarioLoguedo, navegar } = funcionesGenerales()
 
-const { cerrarSesion, usuario, navegar } = funcionesGenerales()
-
-cerrar.addEventListener('click', cerrarSesion)
-
-
+//Navega al perfil de usuario logueado.
 const navegarAPerfil = () => {
-    navegar(`../pages/perfil.html?id=${usuario.id}`)
+    navegar(`../pages/perfil.html?id=${usuarioLoguedo().id}`)
 }
-perfil.addEventListener('click', navegarAPerfil)
+
+//Agrega el evento click al enlace perfil que permite navergar al perfil del usuario logueado.
+perfil.addEventListener('click', navegarAPerfil);
+
+//Agrega el evento click al enlace cerrar que permite cerrar seción.
+cerrar.addEventListener('click', cerrarSesion);

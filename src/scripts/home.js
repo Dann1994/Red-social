@@ -1,19 +1,13 @@
+import { nombreHome, sugerencias, fotoPerfilHome} from "../DOM/DOM.js"
 import funcionesGenerales from "./funcionesGenerales.js";
 import estados from "./estados.js";
 
-const { usuario } = funcionesGenerales() //Datos del usuario logueado.
-const { renderizarEstados } = estados() //Renderización de publicaciones
+const { usuarioLoguedo, usuariosRegistrados } = funcionesGenerales();
+const { renderizarEstados } = estados();
 
-const nombre = document.getElementById('nombre');
-const sugerencias = document.getElementById('sugerencias');
-const fotoPerfil = document.getElementById('foto_Perfil');
+const { id, nombre, apellido, fotoPerfil, seguidos} = usuarioLoguedo();
 
-
-const renderizarFotoDePerfil = () => {
-    fotoPerfil.style.backgroundImage = `url(${usuario.fotoPerfil})`
-}
-
-
+//Muestra un bloque html en la sección de sugerencias con los datos del objeto usuario dado por parámetro.
 const mostrarSugerencia = (usuario) => {
     const { nombre, apellido, id } = usuario
     let objeto = document.createElement("div")
@@ -23,36 +17,40 @@ const mostrarSugerencia = (usuario) => {
             <div class="foto" id="${id}"></div>
         </div>
         <div>
-            <h4>${nombre + ' ' + apellido}</h4>
-            <a href="../pages/perfil.html?id=${id}">ver perfil</a>
+            <a href="../pages/perfil.html?id=${id}"><h4>${nombre + ' ' + apellido}</h4></a>
         </div>`
     )
     sugerencias.appendChild(objeto)
 }
 
 
+//Muestra la foto de perfil del usuario logueado.
+const renderizarFotoDePerfil = () => {
+    fotoPerfilHome.style.backgroundImage = `url(${fotoPerfil})`
+}
 
-const renderizarDeSugerencias = (user) => {
-    const foto = document.getElementById(user.id)
+//Muestra la foto de una segerencia según el objeto usuario dado por parámetro.
+const renderizarFotoSugerencia = (user) => {
+    const foto = document.getElementById(user.id);
     foto.style.backgroundImage = `url(${user.fotoPerfil})`
 }
 
+//Muestra sugerencias de todos los usuarios registrados menos el logueado.
 const renderizarSugerencias = () => {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios'));
-    const filtrados = usuarios.filter( u => u.id !== usuario.id)
-    filtrados.forEach( u => {
-        mostrarSugerencia(u)
-        renderizarDeSugerencias(u)
+    const usuarios = usuariosRegistrados();
+    const filtrados = usuarios.filter( user => user.id !== id && !seguidos.includes(user.id.toString()))
+    filtrados.forEach( user => {
+        mostrarSugerencia(user)
+        renderizarFotoSugerencia(user)
     })
 }
-
 
 renderizarSugerencias()
 renderizarEstados()
 renderizarFotoDePerfil()
 
-
-nombre.textContent = usuario.nombre + ' ' + usuario.apellido;
+//Añande el nombre y apellido del usuario logueado en la etiqueta del nombre en el perfil.
+nombreHome.textContent = nombre + ' ' + apellido;
 
 
 

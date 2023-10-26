@@ -6,7 +6,7 @@ import funcionesGenerales from "./funcionesGenerales.js";
 */
 export default function protectedRoute() {
 
-    const { getIdurl } =funcionesGenerales() //Obtiene el id del parámetro de la página "perfil.html"
+    const { getIdurl, usuarioLoguedo } = funcionesGenerales() //Obtiene el id del parámetro de la página "perfil.html"
 
     //Verifica si el la página actual es la que le pasamos por parámetro "página.html"
     const esLaPaginaActual = (html) => {
@@ -15,7 +15,7 @@ export default function protectedRoute() {
     
     //Redirecciona según las condiciones:
     function redireccionar() {
-        const user = sessionStorage.getItem('sesion');
+        const user = usuarioLoguedo();
 
         /*
             SI intentamos acceder a cualquier página que no sea

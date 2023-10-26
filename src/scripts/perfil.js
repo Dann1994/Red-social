@@ -1,20 +1,18 @@
+import { nombre, agregarEstado, info, cambiarFoto, modal, cerrarModal} from "../DOM/DOM.js";
 import "./cambioFotoDePerfil.js";
 import funcionesGenerales from "./funcionesGenerales.js";
 import estados from "./estados.js";
+import seguirUsuario from "./seguirUsuario.js";
 
 
 
-const { usuario, getIdurl } = funcionesGenerales()
+const { usuarioLoguedo, obtenerUSuario, getIdurl } = funcionesGenerales();
+
+seguirUsuario();
 
 const { renderizarEstados } = estados()
 
-const usuarios = JSON.parse(localStorage.getItem('usuarios'))
-const nombre = document.getElementById('nombre')
-const agregarEstado = document.getElementById('agregar_estados')
-const info = document.getElementById('info')
-const cambiarFoto = document.getElementById('cambiar_foto')
-const modal = document.getElementById('modal')
-const cerrarModal = document.getElementById('cerrar_modal')
+
 
 const id = getIdurl()
 let item = document.createElement('div');
@@ -22,7 +20,7 @@ let item = document.createElement('div');
 
 
 const mostrarFotoDePerfil = () => {
-    const userPerfil = usuarios.find( u => u.id == getIdurl())
+    const userPerfil = obtenerUSuario(id)
     const fotoPerfil = document.getElementById('foto_Perfil');
     fotoPerfil.style.backgroundImage = `url(${userPerfil.fotoPerfil})`
 }
@@ -31,9 +29,9 @@ const mostrarModal = () => {
     modal.style.display == 'flex'? (modal.style.display = 'none') : (modal.style.display = 'flex')
 }
 
-const user = usuarios.find( u => u.id == id)
+const user = obtenerUSuario(id)
 
-const { trabajo, estudio, vive } = usuario
+const { trabajo, estudio, vive } = usuarioLoguedo()
 
 nombre.innerHTML = user.nombre + ' ' + user.apellido
 
@@ -77,7 +75,7 @@ item.innerHTML = (
 info.appendChild(item)
 
 
-if (id == usuario.id) {
+if (id == usuarioLoguedo().id) {
     agregarEstado.style.display = 'initial'
     cambiarFoto.style.display = 'initial'
 }
@@ -85,6 +83,8 @@ if (id == usuario.id) {
 
 cambiarFoto.addEventListener('click', mostrarModal)
 cerrarModal.addEventListener('click', mostrarModal)
+
+// agregarAmigoBoton.addEventListener('click', seguir)
 
 
 renderizarEstados()
