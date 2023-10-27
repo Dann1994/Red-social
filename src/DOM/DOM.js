@@ -17,8 +17,10 @@ export const solicitudes = document.getElementById('solicitudes');
 
 //Home
 export const nombreHome = document.getElementById('nombre');
+export const nombreHomeEnlace = document.getElementById('enlace_perfil');
 export const sugerencias = document.getElementById('sugerencias');
 export const fotoPerfilHome = document.getElementById('foto_Perfil');
+
 
 //Perfil
 export const nombre = document.getElementById('nombre');

@@ -42,6 +42,9 @@
                     background-size: cover;
                     background-position: center;
                     border-radius: 50%;
+                    box-shadow: 2px 9px 42px -1px #000000bf inset;
+                    -webkit-box-shadow: 2px 9px 42px -1px #000000bf inset;
+                    -moz-box-shadow: 2px 9px 42px -1px #000000bf inset;
                 }
             }
             .nombre_container {
@@ -52,8 +55,9 @@
                         margin: 5px 0px 5px;
                         font-size: auto;
                         cursor: pointer;
+                        color: map-get($colores, azul);
                         &:hover {
-                            color: map-get($colores , azul );
+                            color: map-get($colores, azul_hover);
                         }
                     }
                 }
@@ -139,9 +143,14 @@
                     div {
                         display: flex;
                         flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
                         h4 {
                             font-size: 15px;
                             color: map-get($colores, gris_nombre);
+                            &:hover {
+                                color: map-get($colores, azul_hover);
+                            }
                         }
                         a {
                             color: map-get($colores, azul );

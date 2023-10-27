@@ -1,4 +1,4 @@
-import { nombreHome, sugerencias, fotoPerfilHome} from "../DOM/DOM.js"
+import { nombreHome, nombreHomeEnlace, sugerencias, fotoPerfilHome} from "../DOM/DOM.js"
 import funcionesGenerales from "./funcionesGenerales.js";
 import estados from "./estados.js";
 
@@ -19,6 +19,7 @@ const mostrarSugerencia = (usuario) => {
         <div>
             <a href="../pages/perfil.html?id=${id}"><h4>${nombre + ' ' + apellido}</h4></a>
         </div>`
+
     )
     sugerencias.appendChild(objeto)
 }
@@ -51,6 +52,7 @@ renderizarFotoDePerfil()
 
 //Añande el nombre y apellido del usuario logueado en la etiqueta del nombre en el perfil.
 nombreHome.textContent = nombre + ' ' + apellido;
+nombreHomeEnlace.href = `./perfil.html?id=${id}`
 
 
 

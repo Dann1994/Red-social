@@ -32,11 +32,30 @@ const registrar = (e) => {
     if ( pass !== pass2 || formularioCompleto() || mailRegistado(mail)) {
         cambiarMensajeDeError()
     } else {
-        usuarios.push(nuevoUsuario)
-        setUsuariosRegistrados(usuarios);
-        setUsuarioLogueado(nuevoUsuario);
-        alert('¡Registro exitoso!');
-        navegar('./home.html');
+        Swal.fire({
+            title: '¿Deseas registrarte con estos datos?',
+            html: `
+                    <div style="text-align: left;">
+                        <p><span style="font-weight: 900;">Nombre:</span> ${nombre} ${apellido}</p>
+                        <p><span style="font-weight: 900;">Mail:</span> ${mail}</p>
+                        <p><span style="font-weight: 900;">Genero:</span> ${genero}</p>
+                    </div>`,
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire('¡Usuario registrado!', '', 'success').then( () => {
+                    usuarios.push(nuevoUsuario)
+                    setUsuariosRegistrados(usuarios);
+                    setUsuarioLogueado(nuevoUsuario);
+                    navegar('./home.html');
+                });
+            }
+        })
     }
 }
 

@@ -48,14 +48,17 @@ export default function cambioFotoDePerfil() {
             cancelButtonText: 'No'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    usuarios.forEach( u => {
-                        if ( u.id == usuarioLoguedo().id ) {
-                            u.fotoPerfil = datos.imgUrl;
-                            sessionStorage.setItem('sesion', JSON.stringify(u))
-                        }
+                    Swal.fire('¡Cambiaste tu foto!', '', 'success').then( () => {
+                        usuarios.forEach( u => {
+                            if ( u.id == usuarioLoguedo().id ) {
+                                u.fotoPerfil = datos.imgUrl;
+                                sessionStorage.setItem('sesion', JSON.stringify(u))
+                            }
+                        });
+                        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                        window.location.reload();
                     });
-                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-                    window.location.reload();
+                    
                 }
             })
         

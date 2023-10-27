@@ -176,7 +176,8 @@ header {
       width: 50px;
       background-color: #DFDEDA;
       margin-right: 10px;
-      border-radius: 50%; }
+      border-radius: 50%;
+      background-position: center; }
   .estado .texto_publicacion {
     margin: 10px 0px 10px;
     padding: 5px 5px 15px;
@@ -331,16 +332,20 @@ header {
           background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
           background-size: cover;
           background-position: center;
-          border-radius: 50%; }
+          border-radius: 50%;
+          box-shadow: 2px 9px 42px -1px #000000bf inset;
+          -webkit-box-shadow: 2px 9px 42px -1px #000000bf inset;
+          -moz-box-shadow: 2px 9px 42px -1px #000000bf inset; }
       .page_continer .grid_container .info_section .nombre_container {
         padding: 10px;
         text-align: center; }
         .page_continer .grid_container .info_section .nombre_container a h2 {
           margin: 5px 0px 5px;
           font-size: auto;
-          cursor: pointer; }
+          cursor: pointer;
+          color: #0A66C2; }
           .page_continer .grid_container .info_section .nombre_container a h2:hover {
-            color: #0A66C2; }
+            color: #0a4580; }
       .page_continer .grid_container .info_section .info_continer {
         padding: 15px; }
         .page_continer .grid_container .info_section .info_continer ul li {
@@ -402,10 +407,14 @@ header {
               border-radius: 50%; }
           .page_continer .grid_container .sugerencia_section .sugerencias div div {
             display: flex;
-            flex-direction: column; }
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; }
             .page_continer .grid_container .sugerencia_section .sugerencias div div h4 {
               font-size: 15px;
               color: #423e3e; }
+              .page_continer .grid_container .sugerencia_section .sugerencias div div h4:hover {
+                color: #0a4580; }
             .page_continer .grid_container .sugerencia_section .sugerencias div div a {
               color: #0A66C2;
               cursor: pointer;
