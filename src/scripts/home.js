@@ -7,6 +7,8 @@ const { renderizarEstados } = estados();
 
 const { id, nombre, apellido, fotoPerfil, seguidos} = usuarioLoguedo();
 
+console.log(usuarioLoguedo());
+
 //Muestra un bloque html en la sección de sugerencias con los datos del objeto usuario dado por parámetro.
 const mostrarSugerencia = (usuario) => {
     const { nombre, apellido, id } = usuario

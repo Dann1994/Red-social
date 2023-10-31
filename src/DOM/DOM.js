@@ -9,18 +9,21 @@ export const generoSelect = document.getElementById('genero')
 export const errorMensaje = document.getElementById('error')
 export const inputsCampos = document.querySelectorAll('input')
 
+//Calendario
+export const dia = document.getElementById('dia');
+export const mes = document.getElementById('mes');
+export const anio = document.getElementById('anio');
+
 //Barra de navegación
 export const cerrar = document.getElementById('cerrar');
 export const perfil = document.getElementById('perfil');
 export const solicitudes = document.getElementById('solicitudes');
-
 
 //Home
 export const nombreHome = document.getElementById('nombre');
 export const nombreHomeEnlace = document.getElementById('enlace_perfil');
 export const sugerencias = document.getElementById('sugerencias');
 export const fotoPerfilHome = document.getElementById('foto_Perfil');
-
 
 //Perfil
 export const nombre = document.getElementById('nombre');

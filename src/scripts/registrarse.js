@@ -2,6 +2,7 @@ import Usuario from "../clases/usuarios.js"
 import formulario from "./formulario.js"
 import { generoSelect, botonRegistrarse, inputsCampos, errorMensaje } from "../DOM/DOM.js"
 import funcionesGenerales from "./funcionesGenerales.js";
+import calendario from "./calendario.js";
 
 //Crea formulario para registrar usuario
 const { verCambios, datos, formularioCompleto, mostrarError, ocultarError, error, inputs} = formulario({
@@ -12,6 +13,8 @@ const { verCambios, datos, formularioCompleto, mostrarError, ocultarError, error
     pass2: '',
     genero: 'Masculino'
 })
+
+const { obtenerFecha, generearCalendario } = calendario()
 
 const { usuariosRegistrados, setUsuarioLogueado, navegar, setUsuariosRegistrados } = funcionesGenerales();
 
@@ -26,7 +29,7 @@ const mailRegistado = (mail) => {
 const registrar = (e) => {
     e.preventDefault()
     const { nombre, apellido, mail, pass, pass2, genero } = datos;
-    const nuevoUsuario = new Usuario( nombre, apellido, mail, pass, genero);
+    const nuevoUsuario = new Usuario( nombre, apellido, mail, pass, genero, obtenerFecha());
     const usuarios = usuariosRegistrados();
 
     if ( pass !== pass2 || formularioCompleto() || mailRegistado(mail)) {
@@ -75,6 +78,8 @@ const cambiarMensajeDeError = () => {
     }
     mostrarError()
 }
+
+generearCalendario()
 
 
 //Agrega eventos a los inputs del login

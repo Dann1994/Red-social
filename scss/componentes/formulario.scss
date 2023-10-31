@@ -60,6 +60,9 @@
                     background-color: map-get($colores, azul_hover);
                 }
             }
+            label {
+                color: map-get($colores, azul);
+            }
             p {
                 color: map-get($colores, rojo_error);
                 display: none;

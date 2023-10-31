@@ -68,6 +68,8 @@ a {
         cursor: pointer; }
         .form_section .form_cuadro form button:hover {
           background-color: #0a4580; }
+      .form_section .form_cuadro form label {
+        color: #0A66C2; }
       .form_section .form_cuadro form p {
         color: #ec3832;
         display: none; }
@@ -296,6 +298,14 @@ header {
       cursor: pointer; }
       .modal_fondo .modal_content button:hover {
         background-color: #0a4580; }
+
+.calendario {
+  flex-direction: row;
+  width: 100%; }
+  .calendario select {
+    margin: 0; }
+  .calendario .anio {
+    width: 30%; }
 
 .page_continer {
   display: flex;

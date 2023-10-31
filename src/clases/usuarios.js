@@ -1,5 +1,5 @@
 class Usuario {
-    constructor( nombre, apellido, mail, pass, genero) {
+    constructor( nombre, apellido, mail, pass, genero, nacimiento) {
         this.id = new Date().getTime() / 1000
         this.nombre = nombre
         this.apellido = apellido
@@ -7,7 +7,7 @@ class Usuario {
         this.pass = pass
         this.amigos = []
         this.genero = genero
-        this.nacimiento = ''
+        this.nacimiento = nacimiento
         this.trabajo = { puesto: 'Sin trabajo', lugar: 'lugar' }
         this.estudio = { titulo: 'titulo', institucion: 'Institucion'}
         this.vive = ''

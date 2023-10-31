@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../src/assets/favicon-32x32.ico" type="image/x-icon">
     <link rel="stylesheet" href="../style/estilos.css">
     <title>Registrer</title>
 </head>
@@ -20,7 +21,13 @@
                     <option value="Masculino">Masculino</option>
                     <option value="Femenino">Femenino</option>
                 </select>
-                <button id="registrarse" >Registrar</button>
+                <label>Fecha de nacimiento</label>
+                <div class="calendario"> 
+                    <select id="dia"></select>
+                    <select id="mes"></select>
+                    <select class="anio" id="anio"></select>
+                </div>
+                <button id="registrarse" >Registrarse</button>
                 <p id="error">Las contraseñas no coinciden</p>
             </form>
         </div>
@@ -28,6 +35,8 @@
     </section>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
+    <script type="module" src="../src/scripts/calendario.js" ></script>
     <script type="module" src="../src/app.js" ></script>
     <script type="module" src="../src/scripts/registrarse.js"></script>
 </html>
