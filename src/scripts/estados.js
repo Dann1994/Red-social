@@ -93,6 +93,7 @@ export default function estados() {
                     background: "red"
                 }
             }).showToast();
+            estadoTexto.style.border = '2px solid red'
         }
     }
 
@@ -102,6 +103,8 @@ export default function estados() {
 
     //Añade la función verCambios al evento input del textArea del estado.
     estadoTexto.addEventListener('input', verCambios);
+
+    estadoTexto.addEventListener('click', () => estadoTexto.style.border = '1px solid #cabdbd')
 
     return {
         renderizarEstados
