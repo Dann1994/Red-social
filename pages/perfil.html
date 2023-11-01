@@ -38,7 +38,11 @@
             <div class="grid_container_perfil" >
                 <section class="grid_item banner_section">
                     <div>
-                        <div class="banner_container"></div>
+                        <div class="banner_container">
+                            <div class="cambio_banner" id="cambiar_banner">
+                                <a>Cambiar banner</a>
+                            </div>
+                        </div>
                         <h2 id="nombre">alguien</h2>
                     </div>
                     <div class="foto_perfil" id="foto_Perfil">
@@ -92,6 +96,18 @@
                         <input type="text" id="imgUrl" placeholder="url" >
                     </form>
                     <button id="subir_foto">Cambiar foto</button>
+                </div>
+            </div>
+
+            <div class="modal_fondo_banner" id="modal_banner">
+                <div class="modal_content modal_content_banner">
+                    <i class="bi bi-x" id="cerrar_modal_banner"></i>
+                    <h2>Inserte url de imagen</h2>
+                    <div class="foto_preview banner" id="foto_preview_banner"></div>
+                    <form>
+                        <input type="text" id="imgUrl" placeholder="url" >
+                    </form>
+                    <button id="subir_foto_banner">Cambiar foto</button>
                 </div>
             </div>
 

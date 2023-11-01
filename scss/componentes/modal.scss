@@ -1,4 +1,4 @@
-.modal_fondo {
+.modal_fondo, .modal_fondo_banner {
     position: fixed;
     top: 0;
     left: 0;
@@ -30,6 +30,14 @@
             background-size: cover;
             background-position: center;
             border: 5px solid map-get($colores , gris_place );
+        }
+        .banner {
+            height: 200px;
+            width: 310px;
+            border-radius: 0%;
+            background-image: url('https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg');
+            background-size: cover;
+            background-position: center;
         }
         h2 {
             color: map-get($colores, azul);
@@ -79,5 +87,8 @@
                 background-color: map-get($colores, azul_hover);
             }
         }
+    }
+    .modal_content_banner {
+        width: 400px;
     }  
 }

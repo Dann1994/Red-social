@@ -1,4 +1,4 @@
-import { nombre, agregarEstado, info, cambiarFoto, modal, cerrarModal} from "../DOM/DOM.js";
+import { nombre, agregarEstado, info, cambiarFoto, cambiarBanner, modal, cerrarModal, modalBanner, cerrarModalBanner} from "../DOM/DOM.js";
 import "./cambioFotoDePerfil.js";
 import funcionesGenerales from "./funcionesGenerales.js";
 import estados from "./estados.js";
@@ -27,6 +27,10 @@ const mostrarFotoDePerfil = () => {
 
 const mostrarModal = () => {
     modal.style.display == 'flex'? (modal.style.display = 'none') : (modal.style.display = 'flex')
+}
+
+const mostrarModalBanner = () => {
+    modalBanner.style.display == 'flex'? (modalBanner.style.display = 'none') : (modalBanner.style.display = 'flex')
 }
 
 const user = obtenerUSuario(id)
@@ -87,11 +91,14 @@ info.appendChild(item)
 if (id == usuarioLoguedo().id) {
     agregarEstado.style.display = 'initial'
     cambiarFoto.style.display = 'initial'
+    cambiarBanner.style.display = 'flex'
 }
 
 
 cambiarFoto.addEventListener('click', mostrarModal)
 cerrarModal.addEventListener('click', mostrarModal)
+cerrarModalBanner.addEventListener('click', mostrarModalBanner);
+cambiarBanner.addEventListener('click', mostrarModalBanner)
 
 // agregarAmigoBoton.addEventListener('click', seguir)
 

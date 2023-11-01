@@ -97,25 +97,27 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 1px;
     border-bottom: 1px solid #DFDEDA; }
     header nav .logo_container {
       margin-left: 20px;
       display: flex;
       align-items: center; }
       header nav .logo_container img {
-        width: 50px;
-        height: 50px; }
+        width: 30px;
+        height: 30px; }
       header nav .logo_container h1 {
-        color: #0A66C2; }
+        color: #0A66C2;
+        font-size: 20px; }
     header nav .head_buscador {
       width: 30%;
       height: 30px;
-      padding-left: 10px; }
+      padding-left: 10px;
+      margin: 0; }
     header nav ul {
       display: flex; }
       header nav ul li {
-        margin: 10px;
+        margin: 5px 20px 5px 10px;
         display: flex;
         justify-content: center;
         align-items: center; }
@@ -142,13 +144,14 @@ header {
           header nav ul li .amistad_notification i {
             color: #767676;
             cursor: pointer;
-            font-size: 35px; }
+            font-size: 30px; }
             header nav ul li .amistad_notification i:hover {
               color: #79b4f0; }
         header nav ul li a {
           color: #767676;
           cursor: pointer;
-          font-weight: 700; }
+          font-weight: 700;
+          font-size: 12px; }
           header nav ul li a:hover {
             color: #79b4f0; }
 
@@ -226,7 +229,7 @@ header {
 .estado_perfil {
   display: none; }
 
-.modal_fondo {
+.modal_fondo, .modal_fondo_banner {
   position: fixed;
   top: 0;
   left: 0;
@@ -238,7 +241,7 @@ header {
   align-items: center;
   display: none;
   z-index: 2; }
-  .modal_fondo .modal_content {
+  .modal_fondo .modal_content, .modal_fondo_banner .modal_content {
     height: 500px;
     width: 300px;
     border-radius: 15px;
@@ -249,7 +252,7 @@ header {
     flex-direction: column;
     position: relative;
     padding: 15px; }
-    .modal_fondo .modal_content .foto_preview {
+    .modal_fondo .modal_content .foto_preview, .modal_fondo_banner .modal_content .foto_preview {
       height: 200px;
       width: 200px;
       background-color: #c9c8c3;
@@ -258,22 +261,29 @@ header {
       background-size: cover;
       background-position: center;
       border: 5px solid #c9c8c3; }
-    .modal_fondo .modal_content h2 {
+    .modal_fondo .modal_content .banner, .modal_fondo_banner .modal_content .banner {
+      height: 200px;
+      width: 310px;
+      border-radius: 0%;
+      background-image: url("https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg");
+      background-size: cover;
+      background-position: center; }
+    .modal_fondo .modal_content h2, .modal_fondo_banner .modal_content h2 {
       color: #0A66C2;
       margin-top: 20px; }
-    .modal_fondo .modal_content i {
+    .modal_fondo .modal_content i, .modal_fondo_banner .modal_content i {
       color: #767676;
       position: absolute;
       top: 5px;
       right: 5px;
       font-size: 30px;
       cursor: pointer; }
-    .modal_fondo .modal_content form {
+    .modal_fondo .modal_content form, .modal_fondo_banner .modal_content form {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 20px; }
-      .modal_fondo .modal_content form input {
+      .modal_fondo .modal_content form input, .modal_fondo_banner .modal_content form input {
         height: 20px;
         width: 90%;
         margin: 10px;
@@ -281,11 +291,11 @@ header {
         border-radius: 10px;
         border: 1px solid #DFDEDA;
         color: #767676; }
-        .modal_fondo .modal_content form input::placeholder {
+        .modal_fondo .modal_content form input::placeholder, .modal_fondo_banner .modal_content form input::placeholder {
           color: #c9c8c3; }
-        .modal_fondo .modal_content form input:focus {
+        .modal_fondo .modal_content form input:focus, .modal_fondo_banner .modal_content form input:focus {
           outline: 2px solid #79b4f0; }
-    .modal_fondo .modal_content button {
+    .modal_fondo .modal_content button, .modal_fondo_banner .modal_content button {
       height: 40px;
       width: 100px;
       margin: 10px;
@@ -296,8 +306,10 @@ header {
       color: aliceblue;
       font-weight: 900;
       cursor: pointer; }
-      .modal_fondo .modal_content button:hover {
+      .modal_fondo .modal_content button:hover, .modal_fondo_banner .modal_content button:hover {
         background-color: #0a4580; }
+  .modal_fondo .modal_content_banner, .modal_fondo_banner .modal_content_banner {
+    width: 400px; }
 
 .calendario {
   flex-direction: row;
@@ -321,10 +333,7 @@ header {
     .page_continer .grid_container .grid_item {
       background-color: #FFFFFF;
       margin: 10px;
-      border: 1px solid #DFDEDA;
-      box-shadow: 0px 0px 2px 2px #756c6c5c;
-      -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
-      -moz-box-shadow: 0px 0px 2px 2px #756c6c5c; }
+      border: 1px solid #DFDEDA; }
     .page_continer .grid_container .info_section {
       grid-area: info;
       height: 430px;
@@ -335,8 +344,8 @@ header {
         justify-content: center;
         align-items: center; }
         .page_continer .grid_container .info_section .home_foto_container .home_foto {
-          height: 200px;
-          width: 200px;
+          height: 150px;
+          width: 150px;
           background-color: #c9c8c3;
           text-align: center;
           background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
@@ -445,10 +454,7 @@ header {
     .page_continer .grid_container_perfil .grid_item {
       background-color: #FFFFFF;
       border-radius: 15px;
-      border: 1px solid #DFDEDA;
-      box-shadow: 0px 0px 2px 2px #756c6c5c;
-      -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
-      -moz-box-shadow: 0px 0px 2px 2px #756c6c5c; }
+      border: 1px solid #DFDEDA; }
     .page_continer .grid_container_perfil .banner_section {
       grid-area: banner;
       border-radius: 0;
@@ -464,7 +470,29 @@ header {
           height: 450px;
           background-image: linear-gradient(#00000000, #00000080), url("https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg");
           background-size: cover;
-          background-position: center; }
+          background-position: center;
+          position: relative; }
+          .page_continer .grid_container_perfil .banner_section div .banner_container .cambio_banner {
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            transition: 1.1s; }
+            .page_continer .grid_container_perfil .banner_section div .banner_container .cambio_banner a {
+              color: transparent;
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              left: 45%;
+              transition: 1.1s; }
+            .page_continer .grid_container_perfil .banner_section div .banner_container .cambio_banner:hover {
+              background-color: #00000054; }
+              .page_continer .grid_container_perfil .banner_section div .banner_container .cambio_banner:hover a {
+                color: #FFFFFF; }
         .page_continer .grid_container_perfil .banner_section div img {
           width: 100%; }
         .page_continer .grid_container_perfil .banner_section div h2 {

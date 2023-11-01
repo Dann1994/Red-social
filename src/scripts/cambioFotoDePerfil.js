@@ -11,7 +11,7 @@ export default function cambioFotoDePerfil() {
     const { verCambios, datos } = formulario({imgUrl:''})
 
     //Funciones del script "funciones generales".
-    const { usuarioLoguedo, usuariosRegistrados, cambiarImagenFondo } = funcionesGenerales()
+    const { usuarioLoguedo, usuariosRegistrados, cambiarImagenFondo, setUsuariosRegistrados, setUsuarioLogueado } = funcionesGenerales()
 
     //Input donde ingresamos la url de la nueva imagen que queremos de perfil.
     const inputUrl = document.getElementById('imgUrl')
@@ -19,14 +19,20 @@ export default function cambioFotoDePerfil() {
     //Botón para cambiar foto de perfil.
     const subirFoto = document.getElementById('subir_foto')
 
+    const subirFotoBanner = document.getElementById('subir_foto_banner')
+    
+
     //Vista previea de la nueva foto de perfil
     const fotoPreview = document.getElementById('foto_preview');
+
+    const fotoPreviewBanner = document.getElementById('foto_preview_banner');
     
 
     //Uestra la previsualización de la foto que vamos a poner de perfil.
     const cambiarFotoPreview = () => {
         const { imgUrl } = datos
         cambiarImagenFondo(fotoPreview, imgUrl)
+        cambiarImagenFondo(fotoPreviewBanner, imgUrl)
     }
 
     /*
@@ -52,10 +58,39 @@ export default function cambioFotoDePerfil() {
                         usuarios.forEach( u => {
                             if ( u.id == usuarioLoguedo().id ) {
                                 u.fotoPerfil = datos.imgUrl;
-                                sessionStorage.setItem('sesion', JSON.stringify(u))
+                                setUsuarioLogueado(u);
                             }
                         });
-                        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+                        setUsuariosRegistrados(usuarios);
+                        window.location.reload();
+                    });
+                    
+                }
+            })
+        
+    }
+
+    const cambiarFotoBanner = () => {
+        const usuarios = usuariosRegistrados()
+        Swal.fire({
+            title: '¿Deseas guardar los cambios?',
+            text: "Vas a cambiar tu foto de banner",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si',
+            cancelButtonText: 'No'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('¡Cambiaste tu foto!', '', 'success').then( () => {
+                        usuarios.forEach( u => {
+                            if ( u.id == usuarioLoguedo().id ) {
+                                u.fotoBanner = datos.imgUrl;
+                                setUsuarioLogueado(u);
+                            }
+                        });
+                        setUsuariosRegistrados(usuarios);
                         window.location.reload();
                     });
                     
@@ -72,19 +107,20 @@ export default function cambioFotoDePerfil() {
     */
     inputUrl.addEventListener('input', verCambios)
 
-    inputUrl.addEventListener('input', cambiarFotoPreview)
+    inputUrl.addEventListener('input', cambiarFotoPreview);
 
-    
 
     /*
         Añade el evento "cambioFotoPerfil"
         al botón del modal.
     */
-    subirFoto.addEventListener('click', cambiarFotoPerfil)
+    subirFoto.addEventListener('click', cambiarFotoPerfil);
+    subirFotoBanner.addEventListener('click', cambiarFotoBanner);
     
 
     return {
-        cambiarFotoPerfil
+        cambiarFotoPerfil,
+        cambiarFotoBanner
     }
 }
 

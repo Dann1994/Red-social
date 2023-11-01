@@ -30,10 +30,14 @@ export const nombre = document.getElementById('nombre');
 export const agregarEstado = document.getElementById('agregar_estados');
 export const info = document.getElementById('info');
 export const cambiarFoto = document.getElementById('cambiar_foto');
+export const cambiarBanner = document.getElementById('cambiar_banner');
+
 
 //Modal
 export const modal = document.getElementById('modal');
+export const modalBanner = document.getElementById('modal_banner');
 export const cerrarModal = document.getElementById('cerrar_modal');
+export const cerrarModalBanner = document.getElementById('cerrar_modal_banner');
 
 //Estado
 export const publicarBoton = document.getElementById('publicar_boton');

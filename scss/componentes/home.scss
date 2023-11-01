@@ -19,9 +19,6 @@
             background-color: map-get($colores, blanco);
             margin: 10px;
             border: 1px solid map-get($colores, gris_bordes );
-            box-shadow: 0px 0px 2px 2px #756c6c5c;
-            -webkit-box-shadow: 0px 0px 2px 2px #756c6c5c;
-            -moz-box-shadow: 0px 0px 2px 2px #756c6c5c;
         }
     
         .info_section {
@@ -34,8 +31,8 @@
                 justify-content: center;
                 align-items: center;
                 .home_foto {
-                    height: 200px;
-                    width: 200px;
+                    height: 150px;
+                    width: 150px;
                     background-color: map-get($colores, gris_place);
                     text-align: center;
                     background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
