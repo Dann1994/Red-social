@@ -1,0 +1,54 @@
+@media screen and (max-width: 1200px) {
+    .page_continer {
+        .grid_container {
+            grid-template-areas:
+            "info info info info info"
+            "estado estado estado estado estado"
+            "public public public public public"
+            "public public public public public"
+            "public public public public public"
+            "public public public public public"
+            "suge suge suge suge suge"
+            ;
+
+            .info_section {
+                height: 350px;
+                .info_continer {
+                    ul {
+                        display: flex;
+                        justify-content: space-around;
+                    }
+                }
+            }
+    
+            .sugerencia_section {
+                height: 150px;
+                .sugerencias {
+                    flex-direction: row;
+                    justify-content: left;
+                }
+                
+            }
+        }
+
+        
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .page_continer {
+        .grid_container {
+            .info_section {
+                height: 430px;
+                text-align: center;
+                .info_continer {
+                    ul {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}

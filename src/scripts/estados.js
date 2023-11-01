@@ -83,6 +83,7 @@ export default function estados() {
                 duration: 3000,
                 position: "center",
             }).showToast();
+            datos.texto = '';
         } else {
             Toastify({
                 text: "Debes escribir algo",

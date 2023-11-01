@@ -396,7 +396,8 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%; }
+        width: 100%;
+        overflow: scroll; }
         .page_continer .grid_container .sugerencia_section .sugerencias div {
           padding: 5px;
           display: flex; }
@@ -585,3 +586,26 @@ header {
     .page_continer .grid_container_perfil .publicar_section {
       grid-area: public;
       display: none; }
+
+@media screen and (max-width: 1200px) {
+  .page_continer .grid_container {
+    grid-template-areas: "info info info info info" "estado estado estado estado estado" "public public public public public" "public public public public public" "public public public public public" "public public public public public" "suge suge suge suge suge"; }
+    .page_continer .grid_container .info_section {
+      height: 350px; }
+      .page_continer .grid_container .info_section .info_continer ul {
+        display: flex;
+        justify-content: space-around; }
+    .page_continer .grid_container .sugerencia_section {
+      height: 150px; }
+      .page_continer .grid_container .sugerencia_section .sugerencias {
+        flex-direction: row;
+        justify-content: left; } }
+
+@media screen and (max-width: 1200px) {
+  .page_continer .grid_container .info_section {
+    height: 430px;
+    text-align: center; }
+    .page_continer .grid_container .info_section .info_continer ul {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column; } }

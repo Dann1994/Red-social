@@ -31,7 +31,7 @@ const mostrarModal = () => {
 
 const user = obtenerUSuario(id)
 
-const { trabajo, estudio, vive } = usuarioLoguedo()
+const { trabajo, estudio, vive, nacimiento } = usuarioLoguedo()
 
 nombre.innerHTML = user.nombre + ' ' + user.apellido
 
@@ -41,6 +41,15 @@ item.innerHTML = (
         <h2>Acerca de </h2>
         <hr>
         </div>
+            <div class="info_item">
+                <div>
+                    <i class="bi bi-cake2-fill"></i>
+                </div>
+                <div>
+                    <h3>Nació</h3>
+                    <p>${nacimiento}</p>
+                </div>
+            </div>
             <div class="info_item">
                 <div>
                     <i class="bi bi-briefcase-fill"></i>

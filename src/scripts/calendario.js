@@ -55,7 +55,7 @@ export default function calendario() {
     const obtenerFecha = () => {
         const { anio, mes, dia } = datos
         const fecha = luxon.DateTime.local( parseInt(anio), parseInt(mes), parseInt(dia));
-        return fecha
+        return fecha.toLocaleString()
     }
 
     return {
