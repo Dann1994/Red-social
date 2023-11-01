@@ -342,7 +342,9 @@ header {
         padding: 10px;
         display: flex;
         justify-content: center;
-        align-items: center; }
+        align-items: center;
+        border-radius: 15px;
+        background: linear-gradient(180deg, #f9c982 3%, #485152 4%, #ffffff00 55%); }
         .page_continer .grid_container .info_section .home_foto_container .home_foto {
           height: 150px;
           width: 150px;
@@ -361,6 +363,7 @@ header {
         .page_continer .grid_container .info_section .nombre_container a h2 {
           margin: 5px 0px 5px;
           font-size: auto;
+          font-size: 18px;
           cursor: pointer;
           color: #0A66C2; }
           .page_continer .grid_container .info_section .nombre_container a h2:hover {
