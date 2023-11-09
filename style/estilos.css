@@ -97,7 +97,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1px;
+    padding: 5px;
     border-bottom: 1px solid #DFDEDA; }
     header nav .logo_container {
       margin-left: 20px;
@@ -315,9 +315,18 @@ header {
   flex-direction: row;
   width: 100%; }
   .calendario select {
-    margin: 0; }
+    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: ''; }
+  .calendario .dia {
+    width: 15%; }
+  .calendario .mes {
+    width: 35%; }
   .calendario .anio {
-    width: 30%; }
+    width: 20%; }
 
 .page_continer {
   display: flex;
@@ -344,6 +353,7 @@ header {
         justify-content: center;
         align-items: center;
         border-radius: 15px;
+        padding: 15px;
         background: linear-gradient(180deg, #f9c982 3%, #485152 4%, #ffffff00 55%); }
         .page_continer .grid_container .info_section .home_foto_container .home_foto {
           height: 150px;
@@ -409,7 +419,7 @@ header {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        overflow: scroll; }
+        overflow-y: auto; }
         .page_continer .grid_container .sugerencia_section .sugerencias div {
           padding: 5px;
           display: flex; }

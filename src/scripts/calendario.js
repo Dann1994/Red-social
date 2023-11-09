@@ -5,50 +5,62 @@ export default function calendario() {
     const fecha = luxon.DateTime.now();
     const { day, month, year } = fecha 
 
+    
     const { verCambios, datos } = formulario({
-        mes: '',
-        dia: '',
-        anio: ''
+        mes: 1,
+        dia: 1,
+        anio: 2000
     })
 
-    const agreagarOpcion = (dom, i) => {
+    const meses = async () => {
+        const  datos = await fetch('meses.json')
+        const json = await datos.json()
+        const meses = json.meses
+        return meses
+    }
+
+    const agreagarOpcion = (dom, v, t) => {
         let opcion = document.createElement("option")
-        opcion.value = i
-        opcion.text = i
+        opcion.value = v
+        opcion.text = t
         dom.appendChild(opcion)
     }
 
-    const agregarDias = () => {
-        const cant = fecha.daysInMonth;
+    const agregarDias = async () => {
+        dia.innerHTML = '';
+        const m = await meses()
+        const cant = m[datos.mes].dias
         for (let i = 1; i <= cant; i++) {
-            agreagarOpcion(dia, i)
+            agreagarOpcion(dia, i, i)
         }
     }
 
-    const agregarMeses = () => {
+    const agregarMeses = async () => {
+        const m = await meses()
         for (let i = 1; i <= 12; i++) {
-            agreagarOpcion(mes, i)
+            agreagarOpcion(mes, i, m[i].nombre)
         }
     }
 
     const agregarAnios = () => {
         const anioActual = fecha.year
         for (let i = anioActual - 100; i <= anioActual; i++) {
-            agreagarOpcion(anio, i)
+            agreagarOpcion(anio, i, i)
         }
     }
 
-    const generearCalendario = () => {
-        agregarDias()
+    const generearCalendario = async () => {
+        await agregarDias()
         agregarMeses()
         agregarAnios()
 
-        dia.value = day
-        mes.value = month
-        anio.value = year
+        dia.value = 1
+        mes.value = 1
+        anio.value = 2000
 
         dia.addEventListener('input', verCambios)
         mes.addEventListener('input', verCambios)
+        mes.addEventListener('input', agregarDias)
         anio.addEventListener('input', verCambios)
     }
 

@@ -31,6 +31,7 @@
                 justify-content: center;
                 align-items: center;
                 border-radius: 15px;
+                padding: 15px;
                 background: linear-gradient(180deg, #f9c982 3%, #485152 4%, #ffffff00 55%);
                 .home_foto {
                     height: 150px;
@@ -97,7 +98,6 @@
                 display: flex;
                 align-items: center;
                 flex-direction: column;
-
                 overflow-y: scroll;
                 height: auto;
                 flex: 1;
@@ -120,7 +120,8 @@
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-                overflow: scroll;
+                overflow-y: auto;
+                
                 div {
                     padding: 5px;
                     display: flex;

@@ -1,5 +1,6 @@
 import { nombre, agregarEstado, info, cambiarFoto, cambiarBanner, modal, cerrarModal, modalBanner, cerrarModalBanner} from "../DOM/DOM.js";
 import "./cambioFotoDePerfil.js";
+import "./cambiarFotoBanner.js";
 import funcionesGenerales from "./funcionesGenerales.js";
 import estados from "./estados.js";
 import seguirUsuario from "./seguirUsuario.js";
@@ -23,6 +24,12 @@ const mostrarFotoDePerfil = () => {
     const userPerfil = obtenerUSuario(id)
     const fotoPerfil = document.getElementById('foto_Perfil');
     fotoPerfil.style.backgroundImage = `url(${userPerfil.fotoPerfil})`
+}
+
+const mostrarFotoBanner = () => {
+    const userPerfil = obtenerUSuario(id)
+    const fotoBanner = document.getElementById('banner_container');
+    fotoBanner.style.backgroundImage = `url(${userPerfil.fotoBanner})`
 }
 
 const mostrarModal = () => {
@@ -105,6 +112,7 @@ cambiarBanner.addEventListener('click', mostrarModalBanner)
 
 renderizarEstados()
 mostrarFotoDePerfil()
+mostrarFotoBanner()
 
 // http://127.0.0.1:5500/pages/perfil.html?id=1697555746.906  ejemplo
 

@@ -10,7 +10,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1px;
+        padding: 5px;
         border-bottom: 1px solid map-get($colores, gris_bordes );
         .logo_container {
             margin-left: 20px;
