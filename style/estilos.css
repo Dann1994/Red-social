@@ -229,7 +229,7 @@ header {
 .estado_perfil {
   display: none; }
 
-.modal_fondo, .modal_fondo_banner {
+.modal_fondo, .modal_fondo_banner, .seguidores_container {
   position: fixed;
   top: 0;
   left: 0;
@@ -241,7 +241,7 @@ header {
   align-items: center;
   display: none;
   z-index: 2; }
-  .modal_fondo .modal_content, .modal_fondo_banner .modal_content {
+  .modal_fondo .modal_content, .modal_fondo_banner .modal_content, .seguidores_container .modal_content {
     height: 500px;
     width: 300px;
     border-radius: 15px;
@@ -252,7 +252,7 @@ header {
     flex-direction: column;
     position: relative;
     padding: 15px; }
-    .modal_fondo .modal_content .foto_preview, .modal_fondo_banner .modal_content .foto_preview {
+    .modal_fondo .modal_content .foto_preview, .modal_fondo_banner .modal_content .foto_preview, .seguidores_container .modal_content .foto_preview {
       height: 200px;
       width: 200px;
       background-color: #c9c8c3;
@@ -261,29 +261,29 @@ header {
       background-size: cover;
       background-position: center;
       border: 5px solid #c9c8c3; }
-    .modal_fondo .modal_content .banner, .modal_fondo_banner .modal_content .banner {
+    .modal_fondo .modal_content .banner, .modal_fondo_banner .modal_content .banner, .seguidores_container .modal_content .banner {
       height: 200px;
       width: 310px;
       border-radius: 0%;
       background-image: url("https://www.guardianoffshore.com.au/wp-content/uploads/2015/03/banner-placeholder.jpg");
       background-size: cover;
       background-position: center; }
-    .modal_fondo .modal_content h2, .modal_fondo_banner .modal_content h2 {
+    .modal_fondo .modal_content h2, .modal_fondo_banner .modal_content h2, .seguidores_container .modal_content h2 {
       color: #0A66C2;
       margin-top: 20px; }
-    .modal_fondo .modal_content i, .modal_fondo_banner .modal_content i {
+    .modal_fondo .modal_content i, .modal_fondo_banner .modal_content i, .seguidores_container .modal_content i {
       color: #767676;
       position: absolute;
       top: 5px;
       right: 5px;
       font-size: 30px;
       cursor: pointer; }
-    .modal_fondo .modal_content form, .modal_fondo_banner .modal_content form {
+    .modal_fondo .modal_content form, .modal_fondo_banner .modal_content form, .seguidores_container .modal_content form {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 20px; }
-      .modal_fondo .modal_content form input, .modal_fondo_banner .modal_content form input {
+      .modal_fondo .modal_content form input, .modal_fondo_banner .modal_content form input, .seguidores_container .modal_content form input {
         height: 20px;
         width: 90%;
         margin: 10px;
@@ -291,11 +291,11 @@ header {
         border-radius: 10px;
         border: 1px solid #DFDEDA;
         color: #767676; }
-        .modal_fondo .modal_content form input::placeholder, .modal_fondo_banner .modal_content form input::placeholder {
+        .modal_fondo .modal_content form input::placeholder, .modal_fondo_banner .modal_content form input::placeholder, .seguidores_container .modal_content form input::placeholder {
           color: #c9c8c3; }
-        .modal_fondo .modal_content form input:focus, .modal_fondo_banner .modal_content form input:focus {
+        .modal_fondo .modal_content form input:focus, .modal_fondo_banner .modal_content form input:focus, .seguidores_container .modal_content form input:focus {
           outline: 2px solid #79b4f0; }
-    .modal_fondo .modal_content button, .modal_fondo_banner .modal_content button {
+    .modal_fondo .modal_content button, .modal_fondo_banner .modal_content button, .seguidores_container .modal_content button {
       height: 40px;
       width: 100px;
       margin: 10px;
@@ -306,10 +306,40 @@ header {
       color: aliceblue;
       font-weight: 900;
       cursor: pointer; }
-      .modal_fondo .modal_content button:hover, .modal_fondo_banner .modal_content button:hover {
+      .modal_fondo .modal_content button:hover, .modal_fondo_banner .modal_content button:hover, .seguidores_container .modal_content button:hover {
         background-color: #0a4580; }
-  .modal_fondo .modal_content_banner, .modal_fondo_banner .modal_content_banner {
+  .modal_fondo .modal_content_banner, .modal_fondo_banner .modal_content_banner, .seguidores_container .modal_content_banner {
     width: 400px; }
+
+.seguidores_container .modal_content .pefil_seguidos, .seguidores_container .modal_content .pefil_seguidores {
+  text-align: center;
+  overflow-y: auto;
+  height: 50%;
+  width: 90%; }
+  .seguidores_container .modal_content .pefil_seguidos div, .seguidores_container .modal_content .pefil_seguidores div {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 5px;
+    text-align: left; }
+    .seguidores_container .modal_content .pefil_seguidos div .foto_container, .seguidores_container .modal_content .pefil_seguidores div .foto_container {
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .seguidores_container .modal_content .pefil_seguidos div .foto_container .foto, .seguidores_container .modal_content .pefil_seguidores div .foto_container .foto {
+        height: 50px;
+        width: 50px;
+        background-color: #c9c8c3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%; }
+      .seguidores_container .modal_content .pefil_seguidos div .foto_container .nombre_seg, .seguidores_container .modal_content .pefil_seguidores div .foto_container .nombre_seg {
+        text-align: left; }
 
 .calendario {
   flex-direction: row;
@@ -413,21 +443,21 @@ header {
       .page_continer .grid_container .sugerencia_section .sugerencias_title {
         padding: 5px;
         background-color: #EDF3F8; }
-      .page_continer .grid_container .sugerencia_section .sugerencias {
+      .page_continer .grid_container .sugerencia_section .sugerencias, .page_continer .grid_container .sugerencia_section .pefil_seguidores {
         padding: 5px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
         overflow-y: auto; }
-        .page_continer .grid_container .sugerencia_section .sugerencias div {
+        .page_continer .grid_container .sugerencia_section .sugerencias div, .page_continer .grid_container .sugerencia_section .pefil_seguidores div {
           padding: 5px;
           display: flex; }
-          .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container {
+          .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container, .page_continer .grid_container .sugerencia_section .pefil_seguidores div .foto_container {
             width: 30%;
             display: flex;
             justify-content: center; }
-            .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container .foto {
+            .page_continer .grid_container .sugerencia_section .sugerencias div .foto_container .foto, .page_continer .grid_container .sugerencia_section .pefil_seguidores div .foto_container .foto {
               height: 50px;
               width: 50px;
               background-color: #c9c8c3;
@@ -438,17 +468,17 @@ header {
               background-size: cover;
               background-position: center;
               border-radius: 50%; }
-          .page_continer .grid_container .sugerencia_section .sugerencias div div {
+          .page_continer .grid_container .sugerencia_section .sugerencias div div, .page_continer .grid_container .sugerencia_section .pefil_seguidores div div {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center; }
-            .page_continer .grid_container .sugerencia_section .sugerencias div div h4 {
+            .page_continer .grid_container .sugerencia_section .sugerencias div div h4, .page_continer .grid_container .sugerencia_section .pefil_seguidores div div h4 {
               font-size: 15px;
               color: #423e3e; }
-              .page_continer .grid_container .sugerencia_section .sugerencias div div h4:hover {
+              .page_continer .grid_container .sugerencia_section .sugerencias div div h4:hover, .page_continer .grid_container .sugerencia_section .pefil_seguidores div div h4:hover {
                 color: #0a4580; }
-            .page_continer .grid_container .sugerencia_section .sugerencias div div a {
+            .page_continer .grid_container .sugerencia_section .sugerencias div div a, .page_continer .grid_container .sugerencia_section .pefil_seguidores div div a {
               color: #0A66C2;
               cursor: pointer;
               font-weight: 900px; }

@@ -31,13 +31,19 @@ export const agregarEstado = document.getElementById('agregar_estados');
 export const info = document.getElementById('info');
 export const cambiarFoto = document.getElementById('cambiar_foto');
 export const cambiarBanner = document.getElementById('cambiar_banner');
+export const seguidores = document.getElementById('seguidores');
+export const perfilSeguidores = document.getElementById('pefil_seguidores');
+export const perfilSeguidos = document.getElementById('pefil_seguidos');
 
 
 //Modal
 export const modal = document.getElementById('modal');
 export const modalBanner = document.getElementById('modal_banner');
+export const modalSeguidores = document.getElementById('modal_seguidores');
+
 export const cerrarModal = document.getElementById('cerrar_modal');
 export const cerrarModalBanner = document.getElementById('cerrar_modal_banner');
+export const cerrarModalSeguidores = document.getElementById('cerrar_modal_seguidores');
 
 //Estado
 export const publicarBoton = document.getElementById('publicar_boton');

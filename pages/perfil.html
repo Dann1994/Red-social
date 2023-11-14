@@ -31,7 +31,7 @@
                     <div>
                         <div class="banner_container" id="banner_container">
                             <div class="cambio_banner" id="cambiar_banner">
-                                <a>Cambiar banner</a>
+                                <a>Cambiar portada</a>
                             </div>
                         </div>
                         <h2 id="nombre">alguien</h2>
@@ -45,8 +45,7 @@
                     <div class="perfil_nav">
                         <ul>
                             <li>Información</li>
-                            <li>Seguidores</li>
-                            <li>Seguidos</li>
+                            <li><a id="seguidores">Seguidores/Seguidos</a></li>
                             <li>Fotos</li>
                             <li>
                                 <div id="seguir" class="seguir" >
@@ -99,6 +98,20 @@
                         <input type="text" id="imgUrlBanner" placeholder="url" >
                     </form>
                     <button id="subir_foto_banner">Cambiar foto</button>
+                </div>
+            </div>
+
+            <div class="seguidores_container" id="modal_seguidores">
+                <div class="modal_content">
+                    <i class="bi bi-x" id="cerrar_modal_seguidores"></i>
+                    <h2>Seguidores</h2>
+                    <div id="pefil_seguidores" class="pefil_seguidores">
+                        
+                    </div>
+                    <h2>Seguidos</h2>
+                    <div id="pefil_seguidos" class="pefil_seguidos">
+                        
+                    </div>
                 </div>
             </div>
 

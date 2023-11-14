@@ -1,4 +1,9 @@
-import { nombre, agregarEstado, info, cambiarFoto, cambiarBanner, modal, cerrarModal, modalBanner, cerrarModalBanner} from "../DOM/DOM.js";
+import { 
+    nombre, agregarEstado, info, cambiarFoto, cambiarBanner,
+    modal, cerrarModal, modalBanner, modalSeguidores, cerrarModalBanner,
+    cerrarModalSeguidores, seguidores, perfilSeguidores, perfilSeguidos
+} from "../DOM/DOM.js";
+
 import "./cambioFotoDePerfil.js";
 import "./cambiarFotoBanner.js";
 import funcionesGenerales from "./funcionesGenerales.js";
@@ -7,7 +12,7 @@ import seguirUsuario from "./seguirUsuario.js";
 
 
 
-const { usuarioLoguedo, obtenerUSuario, getIdurl } = funcionesGenerales();
+const { usuarioLoguedo, obtenerUSuario, getIdurl, usuariosRegistrados} = funcionesGenerales();
 
 seguirUsuario();
 
@@ -39,6 +44,75 @@ const mostrarModal = () => {
 const mostrarModalBanner = () => {
     modalBanner.style.display == 'flex'? (modalBanner.style.display = 'none') : (modalBanner.style.display = 'flex')
 }
+
+const mostrarModalSeguidores = () => {
+    modalSeguidores.style.display == 'flex'? (modalSeguidores.style.display = 'none') : (modalSeguidores.style.display = 'flex')
+}
+
+const mostrarSesguidor = (usuario) => {
+    const { nombre, apellido, id } = usuario
+    let objeto = document.createElement("div")
+    objeto.innerHTML = (
+        `
+        <div class="foto_container">
+            <div class="foto" id="${id}"></div>
+        </div>
+        <div>
+            <a href="../pages/perfil.html?id=${id}"><h4>${nombre + ' ' + apellido}</h4></a>
+        </div>`
+
+    )
+    perfilSeguidores.appendChild(objeto)
+}
+
+const renderizarFotoSeguidor = (user) => {
+    const foto = document.getElementById(user.id);
+    foto.style.backgroundImage = `url(${user.fotoPerfil})`
+}
+
+
+const renderizarSeguidores = () => {
+    const usuario = obtenerUSuario(id).seguidores
+    const filtrados = usuario.filter( user => usuario.includes(user))
+    console.log(filtrados);
+    filtrados.forEach( user => {
+        const u = obtenerUSuario(user)
+        mostrarSesguidor(u)
+        renderizarFotoSeguidor(u)
+    })
+}
+
+renderizarSeguidores()
+
+const mostrarSesgudo = (usuario) => {
+    const { nombre, apellido, id } = usuario
+    let objeto = document.createElement("div")
+    objeto.innerHTML = (
+        `
+        <div class="foto_container">
+            <div class="foto" id="${id}"></div>
+        </div>
+        <div class="nombre_seg">
+            <a href="../pages/perfil.html?id=${id}"><h4>${nombre + ' ' + apellido}</h4></a>
+        </div>`
+
+    )
+    perfilSeguidos.appendChild(objeto)
+}
+
+
+const renderizarSeguido = () => {
+    const usuario = obtenerUSuario(id).seguidos
+    const filtrados = usuario.filter( user => usuario.includes(user))
+    console.log(filtrados);
+    filtrados.forEach( user => {
+        const u = obtenerUSuario(user)
+        mostrarSesgudo(u)
+        renderizarFotoSeguidor(u)
+    })
+}
+
+renderizarSeguido()
 
 const user = obtenerUSuario(id)
 
@@ -105,9 +179,9 @@ if (id == usuarioLoguedo().id) {
 cambiarFoto.addEventListener('click', mostrarModal)
 cerrarModal.addEventListener('click', mostrarModal)
 cerrarModalBanner.addEventListener('click', mostrarModalBanner);
-cambiarBanner.addEventListener('click', mostrarModalBanner)
-
-// agregarAmigoBoton.addEventListener('click', seguir)
+cambiarBanner.addEventListener('click', mostrarModalBanner);
+seguidores.addEventListener('click', mostrarModalSeguidores);
+cerrarModalSeguidores.addEventListener('click', mostrarModalSeguidores);
 
 
 renderizarEstados()
